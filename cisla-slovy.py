@@ -24,7 +24,7 @@ suffixes = (
    )
 
 def fetch_words(number, index):
-   if number == '0': return 'Zero'
+   if number == '0': return 'nula'
 
    number = number.zfill(3)
    hundreds_digit = int(number[0])
