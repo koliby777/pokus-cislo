@@ -80,5 +80,5 @@ def convert_to_words(number):
 if __name__ == '__main__':
    print("Č í s l o   s l o v y")
    print("(lituji, čeština zatím není vždy dokonalá)")
-   number = int(input('Napiš číslo, max 12 míst: '))
+   number = int(input('Napiš celé kladné číslo, max 12 míst: '))
    print('%d je slovy %s' %(number, convert_to_words(number)))
