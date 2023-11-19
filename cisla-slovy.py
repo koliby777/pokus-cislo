@@ -82,3 +82,4 @@ if __name__ == '__main__':
    print("(lituji, čeština zatím není vždy dokonalá)")
    number = int(input('Napiš celé kladné číslo, max 12 míst: '))
    print('%d je slovy %s' %(number, convert_to_words(number)))
+   input("...pro pokračování stiskni Enter ...")
