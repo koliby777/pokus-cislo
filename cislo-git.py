@@ -1,7 +1,8 @@
-print("T E S T O V Á N Í   Č Í S E L")
-print("(pro ukončení tesování zadej místo čísla: konec)")
-# Cyklus pokračuje, dokud uživatel nezadá slovo konec
-while True:
+def testovani():
+    print("T E S T O V Á N Í   Č Í S E L")
+    print("(pro ukončení tesování zadej místo čísla: konec)")
+    # Cyklus pokračuje, dokud uživatel nezadá slovo konec
+    while True:
         a = input("Zadej reálné číslo: ")
         try:
             # zkusí převést zadaný řetězec na reálné číslo 
@@ -23,6 +24,9 @@ while True:
             print("záporné")
         else:
             print("nula")
-        
+
+if __name__ == "__main__":
+    testovani()
+
 
 
