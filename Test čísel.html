@@ -14,15 +14,15 @@
     <div id="odezva"></div> <!-- vytvoreni prazdneho bloku odezva pro hlasku -->
             
     <py-script>
-        from pyscript import document                   # import knihovny(?) document z pyscriptu
+        from pyscript import document                   # import objektu document jako zástupce objektu dokument webovských stránek (built-in helper)
         
         def testuj(event):                              # fce testuj udalost
-            vstup = document.querySelector("#retezec")  # zadany retezec
-            c = vstup.value                             # hodnota retezce do c
-            vystup = document.querySelector("#odezva")  # hlaska do odezvy
-            vystup.innerText = analyza(c)               # urceni textu hlasky pomoci fce analyza c
+            vstup = document.querySelector("#retezec")  # do vstupu dej první Element v dokumentu, který odpovídá zadanému selektoru retezec
+            c = vstup.value                             # hodnotu retezce dej do c
+            vystup = document.querySelector("#odezva")  # do vystupu dej první Element v dokumentu, který odpovídá zadanému selektoru odezva
+            vystup.innerText = analyza(c)               # do vlastnosti innerText objektu vystup dej hodnotu vrácenou funkcí analyza(c)
         
-        def analyza(zadani):                            # fce analyza 
+        def analyza(zadani):                            # fce analyza zadaného řetězce
             try:                                        # blok testu kódu, zda obsahuje nějaké chyby
                 a = float(zadani)                       # prevod zadaneho retezce na realne cislo
             except ValueError:                          # vyjimka - nesprávná hodnota v zadaném datovém typu
