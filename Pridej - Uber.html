@@ -11,19 +11,19 @@
   <body>
     <h2> H R A &nbsp;&nbsp; P Ř I D E J - U B E R</h2>   <!-- nadpis -->
     <p>Vygeneroval jsem náhodné cele číslo od 1 do 100. Hádej jaké!</p>   <!-- text -->
-    <!-- <input type="text" id="retezec" /> -->
+    
     <button py-click="ini">!!! Začni hru stiskem zde !!!</button> 
-           
+    <p></p>
     <input type="text" id="retezec" placeholder="...a pak sem napiš odhad..." /> <!-- zadani vstupu -->
     <button py-click="testuj">stiskem zadej</button> <!-- stisknuti tlacitka => testovani atd.-->
-    <div id="odezva"></div> <!-- vytvoreni prazdneho bloku odezva pro hlasku -->
+    <div id="odezva"></div> <!-- vytvoreni prazdneho bloku HTML odezva pro hlasku -->
             
     <py-script>
                        
-            def ini(xx):
+            def ini(xyz):
                 global nahodneCislo
                 import random
-                nahodneCislo = int(random.random()*100+1)   
+                nahodneCislo = random.randint(1, 100)   
                 global document
                 from pyscript import document                   # import objektu document jako zástupce objektu dokument webovských stránek (built-in helper)
                 global vraci
