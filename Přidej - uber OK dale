@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />   <!-- nastavení kodifikace znaků v HTML na univerzální utf-8 -->
+      <meta name="viewport" content="width=device-width,initial-scale=1" />   <!-- aby se stránka zobrazila                                                                správně na všech různých zařízeních -->
+      <style>
+        body {background-color: powderblue; width: 70%;}
+        div {background-color: #D9EEE1;}
+      </style>
+      <title>Přidej - uber</title>   <!-- Název karty v prohlížeči  -->
+      <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>   <!-- načtení knihovny umožňující 
+                                                                                          spouštět Pythonový kód v prohlížeči. -->
+  </head>
+  <body>
+    <h2 style="color:yellow; background-color:DodgerBlue;"> H R A &nbsp;&nbsp; P Ř I D E J - U B E R</h2>   <!-- nadpis -->
+    <p><b>Vygeneroval jsem náhodné cele číslo od 1 do 100. <br></br>Hádej jaké!</b></p>   <!-- text -->
+    
+    <button style="color:white; background-color:Tomato;" py-click="ini">!!! Začni hru stiskem zde !!!</button> 
+    <p></p>
+    <input type="text" id="retezec" placeholder="...a pak sem napiš odhad..." /> <!-- zadani vstupu -->
+    <button style="color:green; background-color:lightyellow;" py-click="testuj"><b></b>stiskem zadej</b></button> <!-- stisknuti tlacitka => testovani atd.-->
+    <p></p>
+    <div id="odezva"></div> <!-- vytvoreni prazdneho bloku HTML odezva pro hlasku -->
+            
+    <py-script>
+                       
+            def ini(xyz):
+                global nahodneCislo
+                import random
+                nahodneCislo = random.randint(1, 100)   
+                global document
+                from pyscript import document                   # import objektu document jako zástupce objektu dokument webovských stránek (built-in helper)
+                global vraci
+                vraci = [True, True]
+                        
+            def testuj(event):                              # fce testuj udalost
+                vstup = document.querySelector("#retezec")  # do vstupu dej první Element v dokumentu, který odpovídá zadanému selektoru retezec
+                vstupHodnota = vstup.value                             # hodnotu retezce dej do c
+                vystup = document.querySelector("#odezva")  # do vystupu dej první Element v dokumentu, který odpovídá zadanému selektoru odezva
+                vystup.innerText = srovnani(vstupHodnota, vraci[1])               # do vlastnosti innerText objektu vystup dej hodnotu vrácenou funkcí 
+                        
+            def srovnani(arg0, arg1):
+                if arg1:   
+                    global pocetPokusu
+                    pocetPokusu = 1
+                    vraci[1] = False
+                else:
+                    pocetPokusu += 1
+                try:                                        # blok testu kódu, zda obsahuje nějaké chyby
+                    zadaneCislo = int(arg0)                       # prevod zadaneho retezce na cele cislo
+                except ValueError:                          # vyjimka - nesprávná hodnota v zadaném datovém typu
+                    vraci[0] = "→ to není celé číslo !!!"        # hlaska, pokud neni retezec cele cislo
+                    return vraci[0]                               # vrat tuto hlasku b 
+                    
+                if zadaneCislo > nahodneCislo:                                   # analyza cisla .....
+                    vraci[0] = ("→ uber")
+                    return vraci[0]
+                elif zadaneCislo < nahodneCislo:
+                    vraci[0] = ("→ přidej")
+                    return vraci[0]
+                else:
+                    vraci[0] = ("→ Gratuluji!\n" + "→ Vygenerované číslo " + str(nahodneCislo) + " jsi uhodl na " + str(pocetPokusu) + ". pokus.")
+                    return vraci[0]
+
+    </py-script>   
+    
+  </body>
+</html>
