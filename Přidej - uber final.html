@@ -17,8 +17,8 @@
     
     <button style="color:white; background-color:Tomato;" py-click="ini">!!! Začni hru stiskem zde !!!</button> 
     <p></p>
-    <input type="text" id="retezec" placeholder="...a pak sem napiš odhad..." /> <!-- zadani vstupu -->
-    <button style="color:green; background-color:lightyellow;" py-click="testuj"><b></b>stiskem zadej</b></button> <!-- stisknuti tlacitka => testovani atd.-->
+    <input type="text" id="retezec" placeholder="...pak sem napiš odhad..." /> <!-- zadani vstupu -->
+    <button style="color:green; background-color:lightyellow;" py-click="testuj"><b></b>a vlož</b></button> <!-- stisknuti tlacitka => testovani atd.-->
     <p></p>
     <div id="odezva"></div> <!-- vytvoreni prazdneho bloku HTML odezva pro hlasku -->
             
@@ -59,7 +59,7 @@
                     vraci[0] = ("→ přidej")
                     return vraci[0]
                 else:
-                    vraci[0] = ("→ Gratuluji!\n" + "→ Vygenerované číslo " + str(nahodneCislo) + " jsi uhodl na " + str(pocetPokusu) + ". pokus.")
+                    vraci[0] = ("→ Gratuluji!\n" + "→ Vygenerované číslo " + str(nahodneCislo) + " bylo uhodnuto na " + str(pocetPokusu) + ". pokus.")
                     return vraci[0]
 
     </py-script>   
