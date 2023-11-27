@@ -49,6 +49,7 @@
                 try:                                        # blok testu kódu, zda obsahuje nějaké chyby
                     zadaneCislo = int(arg0)                       # prevod zadaneho retezce na cele cislo
                 except ValueError:                          # vyjimka - nesprávná hodnota v zadaném datovém typu
+                    pocetPokusu += -1
                     vraci[0] = "→ to není celé číslo !!!"        # hlaska, pokud neni retezec cele cislo
                     return vraci[0]                               # vrat tuto hlasku b 
                     
