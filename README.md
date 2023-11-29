@@ -1,1 +1,1 @@
-Různé malé prográmky v Pythonu
+Různé malé prográmky v Pythonu a Pyscriptu
