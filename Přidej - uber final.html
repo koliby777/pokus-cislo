@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="utf-8" />   <!-- nastavení kodifikace znaků v HTML na univerzální utf-8 -->
-      <meta name="viewport" content="width=device-width,initial-scale=1" />   <!-- aby se stránka zobrazila                                                                správně na všech různých zařízeních -->
+      <meta charset="utf-8" />  
+      <meta name="viewport" content="width=device-width,initial-scale=1" />                                                               
       <style>
-        body {background-color: powderblue; width: 70%;}
+        body {background-color: powderblue; width: 70%; margin-top: 20px;  margin-left: 30px; margin-right: 30px; font-size:140%;}
         div {background-color: #D9EEE1;}
       </style>
-      <title>Přidej - uber</title>   <!-- Název karty v prohlížeči  -->
-      <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>   <!-- načtení knihovny umožňující 
-                                                                                          spouštět Pythonový kód v prohlížeči. -->
+      <title>Přidej - uber</title>   
+      <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>   
+                                                                                         
   </head>
   <body>
     <h2 style="color:yellow; background-color:DodgerBlue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H R A <br> PŘIDEJ - UBER</h2>   <!-- nadpis -->
@@ -29,15 +29,15 @@
                 import random
                 nahodneCislo = random.randint(1, 100)   
                 global document
-                from pyscript import document                   # import objektu document jako zástupce objektu dokument webovských stránek (built-in helper)
+                from pyscript import document        
                 global vraci
                 vraci = [True, True]
                         
-            def testuj(event):                              # fce testuj udalost
-                vstup = document.querySelector("#retezec")  # do vstupu dej první Element v dokumentu, který odpovídá zadanému selektoru retezec
-                vstupHodnota = vstup.value                             # hodnotu retezce dej do c
-                vystup = document.querySelector("#odezva")  # do vystupu dej první Element v dokumentu, který odpovídá zadanému selektoru odezva
-                vystup.innerText = srovnani(vstupHodnota, vraci[1])               # do vlastnosti innerText objektu vystup dej hodnotu vrácenou funkcí 
+            def testuj(event):                             
+                vstup = document.querySelector("#retezec")  
+                vstupHodnota = vstup.value                  
+                vystup = document.querySelector("#odezva")  
+                vystup.innerText = srovnani(vstupHodnota, vraci[1]) 
                         
             def srovnani(arg0, arg1):
                 if arg1:   
@@ -46,21 +46,21 @@
                     vraci[1] = False
                 else:
                     pocetPokusu += 1
-                try:                                        # blok testu kódu, zda obsahuje nějaké chyby
-                    zadaneCislo = int(arg0)                       # prevod zadaneho retezce na cele cislo
-                except ValueError:                          # vyjimka - nesprávná hodnota v zadaném datovém typu
+                try:                                        
+                    zadaneCislo = int(arg0)                 
+                except ValueError:                          
                     pocetPokusu += -1
-                    vraci[0] = "→ to není celé číslo !!!"        # hlaska, pokud neni retezec cele cislo
-                    return vraci[0]                               # vrat tuto hlasku b 
+                    vraci[0] = ("→ to není celé číslo !!! " + " ... zatím " + str(pocetPokusu) + " pokusů ....")   
+                    return vraci[0]                         
                     
-                if zadaneCislo > nahodneCislo:                                   # analyza cisla .....
-                    vraci[0] = ("→ uber")
+                if zadaneCislo > nahodneCislo:              
+                    vraci[0] = ("→ UBER ! " + " ... zatím " + str(pocetPokusu) + " pokusů ....")
                     return vraci[0]
                 elif zadaneCislo < nahodneCislo:
-                    vraci[0] = ("→ přidej")
+                    vraci[0] = ("→ PŘIDEJ !" + " ... zatím " + str(pocetPokusu) + " pokusů ....")
                     return vraci[0]
                 else:
-                    vraci[0] = ("→ Gratuluji!\n" + "→ Vygenerované číslo " + str(nahodneCislo) + " bylo uhodnuto na " + str(pocetPokusu) + ". pokus.")
+                    vraci[0] = ("→ GRATULUJI !\n" + "→ Vygenerované číslo " + str(nahodneCislo) + " bylo uhodnuto na " + str(pocetPokusu) + ". pokus.")
                     return vraci[0]
 
     </py-script>   
