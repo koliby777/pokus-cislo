@@ -4,34 +4,37 @@
       <meta charset="utf-8" />  
       <meta name="viewport" content="width=device-width,initial-scale=1" />                                                               
       <style>
-        body {background-color: powderblue; width: 70%; margin-top: 20px;  margin-left: 30px; margin-right: 30px; font-size:140%;}
+        body {background-color: #FFF2D1; width: 70%; margin-top: 20px;  margin-left: 30px; margin-right: 30px; font-size:140%;}
         div {background-color: #D9EEE1;}
       </style>
       <title>Přidej - uber</title>   
-      <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>   
-                                                                                         
+      <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>   <!-- modul Pyscriptu !!! -->                                                                                         
   </head>
+    
   <body>
-    <h2 style="color:yellow; background-color:DodgerBlue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H R A <br> PŘIDEJ - UBER</h2>   <!-- nadpis -->
-    <p><b>Vygeneroval jsem náhodné cele číslo od 1 do 100. <br></br>Hádej jaké!</b></p>   <!-- text -->
+    <h2 style="color:yellow; background-color:DodgerBlue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H R A <br> PŘIDEJ - UBER</h2>
+    <p><b>Vygeneroval jsem náhodné cele číslo od 1 do 100. <br></br>Hádej jaké!</b></p>  
     
     <button style="color:white; background-color:Tomato;" py-click="ini">!!! Začni hru stiskem zde !!!</button> 
     <p></p>
-    <input type="text" id="retezec" placeholder="...pak sem napiš odhad..." /> <!-- zadani vstupu -->
-    <button style="color:green; background-color:lightyellow;" py-click="testuj"><b></b>a vlož</b></button> <!-- stisknuti tlacitka => testovani atd.-->
+    <input type="text" id="retezec" placeholder="...pak sem napiš odhad..." /> 
+    <button style="color:green; background-color:lightyellow;" py-click="testuj"><b></b>a vlož</b></button> 
     <p></p>
-    <div id="odezva"></div> <!-- vytvoreni prazdneho bloku HTML odezva pro hlasku -->
+    <div id="odezva"></div> <!-- vytvoreni bloku HTML odezva -->
             
-    <py-script>
-                       
+    <py-script>                 
             def ini(xyz):
                 global nahodneCislo
                 import random
                 nahodneCislo = random.randint(1, 100)   
                 global document
-                from pyscript import document        
-                global vraci
-                vraci = [True, True]
+                from pyscript import document     # # import objektu document jako zástupce 
+                                                    # objektu dokument webovských stránek (built-in helper)   
+                global vraci           # deklarace seznamu (= skupiny uspořádaných měnitelných hodnot)
+                                        # se jménem  vraci  jako globální proměnné
+                vraci = [True, True]   # do seznamu zadá počáteční hodnoty, booleánké zpočátku
+                vystupIni = document.querySelector("#odezva")
+                vystupIni.innerText =  "...hra iniciována, zadávej čísla !"            
                         
             def testuj(event):                             
                 vstup = document.querySelector("#retezec")  
@@ -50,20 +53,18 @@
                     zadaneCislo = int(arg0)                 
                 except ValueError:                          
                     pocetPokusu += -1
-                    vraci[0] = ("→ to není celé číslo !!! " + " ... zatím " + str(pocetPokusu) + " pokusů ....")   
+                    vraci[0] = ("→ to není celé číslo !!! " + " (zatím " + str(pocetPokusu) + " pokusů ...)")   
                     return vraci[0]                         
                     
                 if zadaneCislo > nahodneCislo:              
-                    vraci[0] = ("→ UBER ! " + " ... zatím " + str(pocetPokusu) + " pokusů ....")
+                    vraci[0] = ("→ UBER ! " + " (zatím " + str(pocetPokusu) + " pokusů ....)")
                     return vraci[0]
                 elif zadaneCislo < nahodneCislo:
-                    vraci[0] = ("→ PŘIDEJ !" + " ... zatím " + str(pocetPokusu) + " pokusů ....")
+                    vraci[0] = ("→ PŘIDEJ !" + " (zatím " + str(pocetPokusu) + " pokusů ....)")
                     return vraci[0]
                 else:
                     vraci[0] = ("→ GRATULUJI !\n" + "→ Vygenerované číslo " + str(nahodneCislo) + " bylo uhodnuto na " + str(pocetPokusu) + ". pokus.")
                     return vraci[0]
-
     </py-script>   
-    
   </body>
 </html>
