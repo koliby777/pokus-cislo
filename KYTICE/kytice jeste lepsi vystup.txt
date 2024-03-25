@@ -1,0 +1,116 @@
+# hyperparameters
+batch_size = 64 # how many independent sequences will we process in parallel?
+block_size = 256 # what is the maximum context length for predictions?
+max_iters = 5000
+eval_interval = 500
+learning_rate = 3e-4
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+eval_iters = 200
+n_embd = 384
+n_head = 6
+n_layer = 6
+dropout = 0.2
+
+10.798926 M parameters
+step 0: train loss 4.5493, val loss 4.5342
+step 500: train loss 2.1938, val loss 2.4072
+step 1000: train loss 1.2128, val loss 2.4163
+step 1500: train loss 0.2823, val loss 3.3639
+step 2000: train loss 0.0995, val loss 4.2790
+step 2500: train loss 0.0761, val loss 4.7962
+step 3000: train loss 0.0661, val loss 5.1297
+step 3500: train loss 0.0610, val loss 5.3700
+step 4000: train loss 0.0569, val loss 5.5962
+step 4500: train loss 0.0547, val loss 5.6641
+step 4999: train loss 0.0523, val loss 5.7628
+
+
+Vzkřil sekejte, a rad tvá,
+v ústrany jde věště svítí zas:
+„Vstane do hrobu pekla skrděše!“
+
+*
+
+Vy, k lavuje polo osenice
+a zlatební se panou křemenů;
+avšak žena ostní -
+arám se lání zvuky
+ha, jako se vrací modvéře,
+plamen otočí nese.
+
+Na zeměná vůná,
+tam, mi dcero má,
+vždycky smutná, na mé době
+vstávají vrby stáhna.
+
+Okostela se léto;
+pole líce družička do koře,
+v král větří chradě!
+
+A to kterak neslyšeti pění,
+ková hradě by boží smatřil,
+moje samoa vží rozkvala -
+ža znové k těžce, za skočí,
+aby zoufale v skokem nad ze navy!
+
+A když zasvítal osmý den,
+král musí jíti s vojsky ven:
+„Měj se tu paní moje,
+já jedo do krutého boje,
+na nepřítele.
+
+Navrátím-li se z bitvy zelené;
+co země se země spěchu
+dívka ní zbrou í:
+srdcince s její blízkou se třese,
+a podře cesty česty prouť se hýše,
+a podále dube skočinice v 
+e zlatý kužel na slova
+s položeno d čekela skonění,
+však zemi lází budi.
+A když již přišli na krostel,
+tu počinu stařečka na polověni keř!"
+Zdviženo rámě, jež jež ji probije -
+tu místo laňky - bílá lilie.
+
+Pán na lilii hledí s údivem,
+rámě mu kleslo, duch se tají v něm;
+myslí a myslí - prsa dmou se výš,
+vůní či touhou? Kdo mu rozumíš?
+
+„Hoj, sluho věrný, ku práci svět:
+chci, abys zejtra ke s zdá -
+brzy pomínej zboží slav pod skoná -
+bese zimě do pekem svou pocí jepou,
+bez místo laňk pochou plamena roze,
+bez ještě širošl do té skální.
+
+A z obé střese ji v klestu nále -
+pouť marného rozeňávaje,
+z tom v pod lesa pole v duše máši! -
+
+Nehouť modly moje skoá pojď,
+a nyní moc.“
+
+„Co mě stojí proseň na chýže kř,
+nespatřice klečíc, neustále.
+
+A A kdo jí cho mé satane.
+Jehom vrátku, co v postavá dále?
+Zdali se poutník, ještě v se můni
+vzadychne se a památku.
+
+„Svobodej, pože, pojď má, paníenko,
+čej Záhořej bleď, zlato niten sen!“
+
+„Mama, mama, saměšlina ještě aniče,
+dítě své vousy matrovaní!
+Ale však rač, radu mádku, bez kostel lása,
+však nespatři nedané hlas.
+
+A však že se nařezba strá polu nebedé -
+jsoucí v kamení,
+tátam polečení a prodle satání,
+zůstal dlae má.
+
+A tou st
