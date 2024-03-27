@@ -20,7 +20,6 @@ co má se státi, stane se;
 a co den jeden v své pochová toky,
 druhý zas na svět vynese.
 
-*
 
 Viděla jsem muže na Bělině vodě,
 praotce slavných vojvodů,
@@ -72,7 +71,7 @@ bujně se zaskví zlatý klas:
 a s ním i vzejde země této štěstí
 a stará sláva vstane zas.
 
-*
+
 
 Viděla jsem skálu nad řekou se pnoucí,
 na skále Krokův zlatý hrad;
@@ -118,7 +117,6 @@ zlatá kolébka vyplyne,
 a země spása, souzená před věky,
 na ní co dítko spočine."
 
-*
 
 Viděla jsem tebe, lůžko blahosvaté,
 znám tebe již, má hvězdo, znám,
@@ -219,7 +217,6 @@ však přichyl ucho k zemi blíž
 a pod kořeny jedle z dáli znění
 zlatého zvonu uslyšíš.
 
-*
 
 Nenaříkejte, neštěstí a osud
 že vás tak tvrdě potkaly,
@@ -251,7 +248,6 @@ svornosti učil Svatopluk,
 však neproniknul dotud, do hodiny,
 moudrého slova zlatý zvuk!
 
-*
 
 Vy, kdo znajíce otcův slavné činy,
 jimi se rádi chlubíte;
@@ -625,7 +621,7 @@ na píšťalku bude pěti -
 se svou matkou rozprávěti!"
 Záhořovo lože
 
-I
+
 
 Šedivé mlhy nad lesem plynou,
 jako duchové vlekouce se řadem;
@@ -668,7 +664,7 @@ není ho možné ze snů vytrhnouti!
 A tam již zachází v chrastině jedné:
 pánbůh ho posilň na jeho pouti!
 
-II
+
 
 Daleké pole, široké pole,
 předlouhá cesta přes to pole běží,
@@ -718,7 +714,7 @@ a k západu rychlé zaměří kroky. -
 Brzy potom zmizel v hustém lesa proutí:
 pánbůh ho potěš na jeho pouti!
 
-III
+
 
 Stojí, stojí skála v hlubokém lese,
 podle ní cesta v habrovém houští,
@@ -817,7 +813,7 @@ hůl svou poutnickou se znamením kříže:
 "Přisahám na kříže svatého slávu,
 že ti z pekla věrnou přinesu zprávu!“
 
-IV
+
 
 Minula zima, sníh na horách taje,
 v údolích povodeň od sněhu a deště;
@@ -995,7 +991,7 @@ ale na poutníka darmo očekává,
 ten nepřichází, nevrací se k němu.
 Bůh budiž milostiv muži kajícnému!
 
-V
+
 
 Devadesáte let přeletělo světem;
 mnoho se zvrátilo zatím od té chvíle:
@@ -1285,7 +1281,7 @@ jako jí na jménu
 spočívá prokletí!
 Štědrý den
 
-I
+
 
 
 Tma jako v hrobě, mráz v okna duje,
@@ -1316,7 +1312,7 @@ Toč se a vrč, můj kolovrátku,
 však jest adventu již nakrátku
 a přede dveřmi Štědrý den!“
 
-II
+
 
 Hoj, ty Štědrý večere,
 ty tajemný svátku,
@@ -1363,7 +1359,7 @@ hluboko - hluboko,
 milému se podívám
 pevně okem v oko.
 
-III
+
 
 Marie, Hana, dvě jména milá,
 panny jak jarní růže květ:
@@ -1415,7 +1411,7 @@ však mi se rozednívá již: -
 jsou to družičky, a mezi nimi proboha!
 rakev - černý kříž!“
 
-IV
+
 
 Vlažný větřík laškuje
 po osení mladém;
@@ -1452,7 +1448,7 @@ Vykvětla, jak by zalívána rosou,
 uvadla, jak by podsečena kosou -
 ubohá Marie!
 
-V
+
 
 Nastala zima, mráz v okna duje,
 v světnici teplo u kamen;
@@ -1496,7 +1492,7 @@ strašlivou poznati jistotu!“
 
 Zlatý kolovrat
 
-I
+
 
 Okolo lesa pole lán,
 hoj jede, jede z lesa pán,
@@ -1534,7 +1530,7 @@ Nikohoť nevidím tu já.“ -
 zejtra se s dcerou domů vrátí,
 vyšly do města.“
 
-II
+
 
 Okolo lesa pole lán,
 hoj jede, jede zase pán;
@@ -1584,7 +1580,7 @@ zejtra, a den se ráno zjasní,
 provodíš dceru svou nevlastní
 na královský hrad!“
 
-III
+
 
 „Vstávej, dceruško, již je čas,
 pan král již čeká, bude kvas;
@@ -1664,7 +1660,7 @@ Zatím na věrnou mou památku
 hleď sobě pilně kolovrátku,
 pilně doma přeď!“
 
-IV
+
 
 V hluboké pusté křovině
 jak se tam vedlo dívčině?
@@ -1798,7 +1794,7 @@ a panna vůkol pohlížela -
 však nikoho tu neviděla,
 než se samotnu.
 
-V
+
 
 A když byly tři neděle,
 král jede z vojny vesele:
@@ -1854,7 +1850,7 @@ hledal a volal v šíré lesy:
 „Kdes, má Dorničko, kde jsi, kde jsi,
 kdes, má rozmilá?“
 
-VI
+
 
 Od lesa k hradu polí lán,
 hoj jede, jede s paní pán;
@@ -2318,7 +2314,7 @@ tvé tělo bílé, spanilé,
 bylo by co ty košile!
 Poklad
 
-I
+
 
 Na pahorku mezi buky
 kostelíček s věží nízkou;
@@ -2621,7 +2617,7 @@ místo zlata - samou hlínu!
 Nehodnatě štěstí byla,
 požehnání neužila.
 
-II
+
 
 A když takto rozdrceně
 s bolestí tu ztrátu nese,
@@ -2697,7 +2693,7 @@ Kde tě najdu, dítě drahé?!
 Dítě drahé - drahé - drahé!“
 blízkými to hučí lesy.
 
-III
+
 
 Mine den, i druhý mine,
 dnové v týden se obrátí,
@@ -2755,7 +2751,7 @@ rozehřávši zemi znova,
 úst k úsměchu nerozhřálo,
 stáleť ještě pláče vdova.
 
-IV
+
 
 A slyš, shůry mezi buky,
 z kostelíčka s věží nízkou,
@@ -2878,7 +2874,7 @@ Hořceť zakusila toho:
 žetě velmi málo zlato,
 avšak dítě nade všecko!
 
-V
+
 
 Dávno kostelíček zbořem;
 umlkly již zvonka zvuky;
