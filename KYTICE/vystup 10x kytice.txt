@@ -1,0 +1,320 @@
+# hyperparameters
+batch_size = 128 # how many independent sequences will we process in parallel?
+block_size = 256 # what is the maximum context length for predictions?
+max_iters = 5000
+eval_interval = 100
+learning_rate = 1e-3
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+eval_iters = 200
+n_embd = 64
+n_head = 4
+n_layer = 4
+dropout = 0.0
+
+0.225484 M parameters
+step 0: train loss 4.4684, val loss 4.4686
+step 100: train loss 2.7172, val loss 2.7177
+step 200: train loss 2.6228, val loss 2.6232
+step 300: train loss 2.5807, val loss 2.5804
+step 400: train loss 2.5378, val loss 2.5398
+step 500: train loss 2.4797, val loss 2.4799
+step 600: train loss 2.4144, val loss 2.4143
+step 700: train loss 2.3549, val loss 2.3555
+step 800: train loss 2.3000, val loss 2.2995
+step 900: train loss 2.2225, val loss 2.2214
+step 1000: train loss 2.2226, val loss 2.2212
+step 1100: train loss 2.0732, val loss 2.0721
+step 1200: train loss 1.9920, val loss 1.9920
+step 1300: train loss 1.9534, val loss 1.9511
+step 1400: train loss 1.8681, val loss 1.8685
+step 1500: train loss 1.8219, val loss 1.8203
+step 1600: train loss 1.7823, val loss 1.7806
+step 1700: train loss 1.7252, val loss 1.7233
+step 1800: train loss 1.6811, val loss 1.6803
+step 1900: train loss 1.6375, val loss 1.6384
+step 2000: train loss 1.5964, val loss 1.5954
+step 2100: train loss 1.5561, val loss 1.5563
+step 2200: train loss 1.5284, val loss 1.5280
+step 2300: train loss 1.5056, val loss 1.5043
+step 2400: train loss 1.4572, val loss 1.4568
+step 2500: train loss 1.4565, val loss 1.4536
+step 2600: train loss 1.4035, val loss 1.4049
+step 2700: train loss 1.3764, val loss 1.3764
+step 2800: train loss 1.3602, val loss 1.3590
+step 2900: train loss 1.3318, val loss 1.3294
+step 3000: train loss 1.3262, val loss 1.3276
+step 3100: train loss 1.2888, val loss 1.2857
+step 3200: train loss 1.2637, val loss 1.2650
+step 3300: train loss 1.2470, val loss 1.2498
+step 3400: train loss 1.2311, val loss 1.2312
+step 3500: train loss 1.2135, val loss 1.2120
+step 3600: train loss 1.1955, val loss 1.1977
+step 3700: train loss 1.1668, val loss 1.1671
+step 3800: train loss 1.1493, val loss 1.1479
+step 3900: train loss 1.1413, val loss 1.1412
+step 4000: train loss 1.1364, val loss 1.1363
+step 4100: train loss 1.0984, val loss 1.0973
+step 4200: train loss 1.1078, val loss 1.1061
+step 4300: train loss 1.0737, val loss 1.0752
+step 4400: train loss 1.0654, val loss 1.0677
+step 4500: train loss 1.0379, val loss 1.0392
+step 4600: train loss 1.0626, val loss 1.0613
+step 4700: train loss 1.0190, val loss 1.0165
+step 4800: train loss 1.0422, val loss 1.0402
+step 4900: train loss 0.9894, val loss 0.9900
+step 4999: train loss 0.9874, val loss 0.9865
+HOTOVO !!!
+
+vě:
+ale hocho zlatý;
+
+vola rané panni, kdo slova:
+vzděla hradé vodnívá,
+praou šeděkou propudí,
+ana vzěžel žádné okoře
+a vidí oděšení.
+
+Hanohou a proložinu
+zlazlá na nemychlo,
+kraždý s roumravnula.
+brzdo větřík
+mradí starččekem,
+tam na umřeovu
+co potocnícem, ledč přesu klece
+den se jí spočinine
+v na vyní své holoubito -
+zmilý hrad se po bodpěnch rože
+zárdeň ďás zbudenů svýtní -
+ale dřen ďábel, domena!
+Ty píseň Večí - ukrváčena.
+
+Ani hle, tu ručil ušijím,
+však jsem nežl na mítky!“
+
+Ačj, má pakovil boha,
+a co vísek spěchá buky
+v mneší žápozvalé:
+on pakla v doma tkolo.
+„Lože jsi, chlapai, jde tvůj,
+cizí milý našlí stěň;
+
+a ci zlato svého parou:
+údy nežko snad leknese,
+slzy mne býti kolem světlečný
+jako štěstí stařem.
+
+
+Navátec pověti vrbyticí
+plam, nedba větším zase,
+ve zavoneně hraděně
+jedetek holédry.
+
+Anak vinu od odkvělání -
+tu, půjdu, kumníc a v zámíně. —
+
+Ten vír vrbí na hředách se skokáH sálu tojí
+stěšeň divný ledn nebyy!
+Dítrebá, milý, širokého kůru
+přijdou slunečky
+hrozedba, beze, jest i tu znemí!
+
+A když již se dobrem prodem,
+svaně mne žim na vzmrazného
+jeseňá - ji ty krovu dále.
+Milost poutník, jak měříce:
+jenž nechoď, slohy kložilé -
+a skarmek tu smutne!“
+
+Uzlík div knay, rád se odstranuje,
+ob širo.“
+
+
+Jedí k se takto výti,
+bez hlubovu pod bora:
+mnoho v lese tu domat štěstí
+a neplane vyní vzdoužeC tce:
+co tiská to hraděnate."
+
+Ó mohořil uděly,
+k ramu vidělo spíšem,
+co nikdo by na do jakte?
+Ta zůstav umrlenu světla,
+na jako sci nedýš zlatí,
+spraha, venkám jsi práce:
+"Počitejte, sviť, alečka? -
+Však je se zdeští, ty veřmi letídouti,
+spřic ublévila domu hlasa nese.
+
+A když mrtvý odz oklý na kospětí,
+zpět ho tíhle v pekle noc se výtiši;
+plede jen jen líci jest bojí ase?
+Již nit se tu staře změ dořídrá -
+jím na pod jarní dromů -
+potřkli saděl ďábla
+otleti ještě zratří nese:
+„Svobráva, Krista mé těctou
+tráž ili pamě, očtvěrala.
+A když utrkánem zamklejší -
+běda vrba hořírala! -
+Viděla, není, raztíčka
+kuliká neži obohatila:
+v koho. 
+
+I chalétá třice
+jako vodtí hřížituje,
+uvatje budá nese měla.
+
+Růženot zněvěly,
+jak by ohra zdrcera;
+jemi bude stranu vrchu,
+a tu z tenčích pekání!
+„Ach ji se chybou točí
+žena léta mi to stvoje,
+vlasko to poladěnice,
+vzkřikne, žena vodívá
+lánd nepříkovito.
+
+Krokoká jako babice
+byla skok složila:
+co vona v černe,
+ani a važnký ve vroumrat?
+Nikošelá, podoba, k zlatou,
+mladenš horce podle opadlem -
+lilii ku nikol shoje!
+
+A když již mé mála svojí
+nikám životí ve odte;
+svatem tam na jaká hleD!“
+
+„Mama, matičko, je ryčinul,
+tak nechlavejši!
+Za mysli, ani tvami hrala,
+mnohyla, jak a očeká.
+Aj, co máš, malá, ta hlas kas
+ještě jak byla v cinkám králo,
+nikdy komohové píce
+a nebodalek ještě pění. -
+Zde tu naděl jen spání,
+posí ježká venká chvíle:
+„Ach to neštěkko, co zločí
+spíceí propedniče.
+
+Ale vichá sítě, budoušina:
+jiného mohy, oprať mně vině kůže
+líce doma, jemných temi líti:
+jenž nezboď, u sloužence nité;
+stavénčko po slově upněnu,
+nechopět, moho já přimné:
+ať milosti bych stu, oto kojívita! -
+Ty ješ já stočí, chrovanu v usvětně oje
+zemi zimne!
+
+Místek mi se dáva svět jstem prostlužila.
+
+Rdce zdva stříbra býti, kratičky,
+jako blízko, panna uc;
+samoť všlia svatba zazdlete.
+Habá, sláboučko
+všeli - do ruce stála,
+podle svatý pátkajíce
+na porozumadlu.
+
+Plašukolo, satbice,
+mnadey koi padice
+s ižena mnešey
+do díti dolička.
+
+
+Mladehouti tvýči,
+ožnéla jedli,
+hněvu pana levažti,
+z nenašešinala -
+tě v srdce znám smě lývají jestí vechožati,
+přeznášCe: čjhli v jedné, druhý pliloují
+již neská neu zas milene.
+Jen kámen příloží v lesumě se lání,
+vašak ve úvyboučí obuz ženskouce
+a ty na plíšla své pístílu.
+
+Polout ještě snějí stěnici,
+šťak jicho bytisky rvinou:
+tak dvě mi lehé!
+
+Zastničká přezatnouce!
+
+Hah
+
+Vna se babohu
+hukorekem, z hradu vypen:
+matko širo; jatí hlad,
+zašukám pukánsti:
+zimavnulila věšice
+tam platnu.
+
+
+„Klakék jsyno, jako panel
+nerou věmhory
+matce místi svíti:
+ve plane.
+
+A co strání mrtvě
+předla v shrbila?
+
+Umráná jimři vodu sedá,
+v lese tak jen táhle;
+draha a s ním zdrávaly
+vzdychá žena nad vypan,
+ať jimi šije roživ,
+leč —kne, má na dobréle:
+pánbůh po myslilala.
+
+Stoči lid vody, vědky,
+mltyso moje chce jiné!
+Béož slyš, dívky hochu,
+zejtra košina:
+vratímně, věr v jednou, postíval:
+„Kéž aní mé meché štělí!“
+
+„Za jako tě, ještě tatí droži,
+kdo tě tě tokoupel,
+jak jako v něm mohoru!“
+
+O pad ruté ručekem
+svále přižel lád a ken:
+nározuho, slovo - ji tvá pláni,
+nez dutíš jeto cestojí zvěří:
+„Pojď, hleď Hu, hadbolého klasy,
+než tělučko!“ -
+
+Vratvý složičky
+bješte rukoumst.
+
+Což ta malá,
+takto mu na vzdávala,
+neplastřím hrůzoru! -
+Nevzhynešej, co druhé píše!
+Kyj můj uže - čabr, deš tu nit!“ tyh tys,
+prvíle věsta z jistou mil. -
+
+
+
+Na mne dítka tam s nebou míti
+sazdynul, moje tatk,
+zejli jsem mládenem tišá
+neobek!“ —
+
+„ezvedná a hradu radu,
+a tu haničkánů,
+k ona ská kolem
+jen za tenč otekinila.
+
+Staje droku od peklé, do sláce
+sboud krále vzahubnem
+mně zdrtahé ziměztrati:
+jsou lidstnénat byro bylo
+a udítré díti stál.
+
+A tez utíc jabí očisy?
+A síní žena ji král!
+Vykrevejš neže léta krásy,
+pěcho
