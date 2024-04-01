@@ -1,0 +1,122 @@
+Notebook Eurocom GPU NVIDIA GeForce RTX 2080 (Cuda): 
+
+# hyperparameters
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 256 # maximální délka kontextu pro predikce
+max_iters = 5000 # maximální počet iterací trénování
+eval_interval = 500 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost učení
+device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
+eval_iters = 200 # počet iterací pro evaluaci
+n_embd = 384 # velikost vektorů vložení
+n_head = 6 # počet hlav v multi-head attention
+n_layer = 6 # počet vrstev transformátoru
+dropout = 0.2 # pravděpodobnost dropoutu
+
+*** Python 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)] on win32. ***
+*** Remote Python engine is active ***
+>>> 
+*** Remote Interpreter Reinitialized ***
+
+10.797388 M parameters
+step 0: train loss 4.4591, val loss 4.4593
+step 500: train loss 2.2603, val loss 2.2597
+step 1000: train loss 1.4710, val loss 1.4680
+step 1500: train loss 0.4991, val loss 0.4986
+step 2000: train loss 0.1316, val loss 0.1318
+step 2500: train loss 0.0833, val loss 0.0831
+step 3000: train loss 0.0722, val loss 0.0721
+step 3500: train loss 0.0641, val loss 0.0640
+step 4000: train loss 0.0608, val loss 0.0609
+step 4500: train loss 0.0580, val loss 0.0580
+step 4999: train loss 0.0544, val loss 0.0546
+
+
+A na tou shrom nad klína,
+stará již slábny před křiše,
+sravou rozeru takývá.
+
+„Ach milý, řez bůh muži,
+synu stáluhnul stále,
+milostná jich bohat tváři:
+vara, ach, zase zas se potokemná,
+nich dal nepořítele -
+vždy je z ořen plamena zpravu
+a protcené rostranny naklobone,
+plamena v odkudy lový.
+
+I zželelo se mládencovu -
+horné zvácni ty koli,
+kde nají v roku pocesta složil,
+
+ve ku potět nablík ložila.
+
+Pole mi pod krevnla.
+A hdu stu pod klestu
+s budí nese jinoch v oskudějí,
+co a nikdy spátal vody ze studni.
+
+Pán uchodu a v kročí,
+slyšela utrý zesedí
+nezasu jednou vlastní
+nikdy ji noc večeři;
+a pusto a bojí, tu schýži.
+
+A když iví se mlá utichu boje,
+opět nepom jižliti proměněla.
+
+Pán na lehné vaší s mrtvu, šlové mrtvě
+zamrtvou v kom lesní , kde moc se člověka
+ve kole pod zorové týměky zase zběřem,
+vzkřikne a s ve cizemě temný ,
+klamen stranu již i chce.
+
+I zařičel a protom potěnrého.
+
+„Nic nesluchu, houzená v suchrání,
+dceru mladém v západě
+vzmohoru svěžce děťCovu tu jeho zruku.
+
+„Ach se neboj, pane, pane můj, dlouhos nepřicházel:
+hle, tvá sazenice již ovoce nese,
+ach utrhni, pane, však sám jsi sázel.“ -
+
+„Záhoři, Záhoři, pokoj budiž tobě:
+pokoj ti přináším v poslední kon.
+
+A když mrálo matička?
+Co to máš, má milá, nic se nebál!
+Sychly jim se na pilně měj:
+i si i prostal - nebopání zvuk!
+„Nezhoj však mi, co neslyšíš,
+nechtí a prov jsem plehu koli tu cholidst.
+
+„A jak milý není v pekelné kuříže -
+ve Zdychají z žel kamenu hlíží
+zára i spodit nepřesl tebe.
+
+„A slyš, nenoho právěz, sa děs!"
+
+„Nezhoukej, co v tžentí husti,
+rodice zlé jsem ty dobře zvuky. -
+„A boha, běda, běda mi!
+Ach mizel je před mnou,
+a já za teblou nit!“
+
+„Nehněvej se, má dívku,
+má svzejde proveň ty okolovratáže,
+zašumi zvířile - zalý nit.
+Snám tebe, pani koleni,
+kolobra pdala přez veliká -
+rlatá zmizí ji v tvy zlatého,
+z krve zápravavíš?
+
+„Půjdu se čeká nemsketu probu hledívati!
+
+Líbrý čas Žel podiv kotovrátku,
+vchodu se ježal zasné náše.
+
+A mrtvý se tu z lostrčírá,
+vzkrvětek po drobena prlátí,
+na dvě 
+>>> 

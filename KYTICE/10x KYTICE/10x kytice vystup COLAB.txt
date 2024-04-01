@@ -1,0 +1,750 @@
+COLAB T4:
+
+# hyperparameters
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 256 # maximální délka kontextu pro predikce
+max_iters = 5000 # maximální počet iterací trénování
+eval_interval = 500 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost učení
+device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
+eval_iters = 200 # počet iterací pro evaluaci
+n_embd = 384 # velikost vektorů vložení
+n_head = 6 # počet hlav v multi-head attention
+n_layer = 6 # počet vrstev transformátoru
+dropout = 0.2 # pravděpodobnost dropoutu
+
+--2024-04-01 20:50:44--  https://raw.githubusercontent.com/koliby777/pokus-cislo/master/KYTICE/10x%20KYTICE/10x%20kytice.txt
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 806980 (788K) [text/plain]
+Saving to: ‘10x kytice.txt’
+
+10x kytice.txt      100%[===================>] 788.07K  --.-KB/s    in 0.03s   
+
+2024-04-01 20:50:44 (25.9 MB/s) - ‘10x kytice.txt’ saved [806980/806980]
+
+10.797388 M parameters
+step 0: train loss 4.4591, val loss 4.4593
+step 500: train loss 2.2538, val loss 2.2532
+step 1000: train loss 1.4647, val loss 1.4618
+step 1500: train loss 0.5028, val loss 0.5017
+step 2000: train loss 0.1312, val loss 0.1312
+step 2500: train loss 0.0840, val loss 0.0841
+step 3000: train loss 0.0726, val loss 0.0725
+step 3500: train loss 0.0647, val loss 0.0647
+step 4000: train loss 0.0606, val loss 0.0606
+step 4500: train loss 0.0574, val loss 0.0571
+step 4999: train loss 0.0548, val loss 0.0550
+
+
+
+blíže pannu - ach, buch, buch, buch!
+silněji tluče její druh. -
+
+„Vstávej, pane milá, nevsta samořela,
+vlasy na světla.
+
+Pán tomženní umrlček její podle těla,
+a do lesa zpátky spěchalo. -
+„Podej mi, chlapče, živé vody,
+nechť bude tělo beze škody,
+jako bývalo.“
+
+A ránu k ráně přiložil,
+a v jede z ohebou cestou dále.
+
+„Haneb jest nena vrha,
+vranbo tam vraného mi je spatý.
+
+Tam stavení - a však jdeš stěna? -
+Ach paní do ta do jezera:
+zacháš.“ - je v klíněn blah!
+
+„Hoj, na to nese, však mi té
+to slaví - habrito zvěst!"
+Záhořov!
+
+„Nezhrabovení, hlou tobě,
+objím se tě prosí trávě.
+
+Kduchrána a do tebe,
+na to nepřitil. -
+
+Na jsou tevé skále
+jak by tenk se podiv země hledí.
+
+Létě z vyráží zapadla,
+v když slzi styno vadlila,
+a byli skatěživnoula:
+„Žete mne z každý jejíti prověkně,
+z kostela slyšeti pění? -
+
+Nehodnej již nako číti rahu,
+aby boží s měla nebou z mradu.
+
+ějak se pěkní, hlebo děťátko,
+počkej ještě jen drobátko.“
+
+A když již byly za tu složí
+na pohlíží s košetě;
+za ním svatí svého krvit.
+A na věje, strany oušile!
+Jeví se zase tuhně zvěstí
+neb s vrací slyš:
+„Ach je, jistě, jemu po tu kamene,
+vítr burácel na její.
+
+A dvě nochu, a tvá roucí k oblečena,
+a děvkují se tu života Byla stne.
+
+A žena se hrobu mála
+a na topět hořelo strání pstáno!
+Kdo stele na cestojí,
+celá stojí skála:
+ještě to pase svítilé,
+žena na opět láčka po jabloné svadly
+a tobě se tu velkkébě dujete.
+
+Habez teď a se v děťátko,
+ušijde z láska pohradu -
+zal blízko mi se ti bukeru nesedá!
+
+A lízkoho kostem boží smilosti jen sad!
+Bože, co se se mnou síně!
+Dcin! se v kne vzdyvítávám,
+přehnesou vrací psanu blánu.
+Proutíkovituje spěchu;
+a nežli samot na stojí,
+plesnou se zas ný kvíteku, zvětví jeho osa,
+a tam slyšetně vychne.
+
+A když byž přijedl a ohromu s bojí,
+ostatr matko nost a stojí srána
+a do tebe tebe zhojí.
+
+„Tu se šedive am, paní milá,
+vždycky upřímná jsi byla,
+a pro sadla tobě blíž -
+mám se již je košile.
+Pánu jedno v tebe, Hospodine:
+dej, ať tvá slávka v zelené promět
+a jako oko střeva zas skokem skoná ven.
+
+„Tuho nezůstaříkem v hrobě,
+odtuška vysoký, mládenec se tají,
+v pěkná nejdou-le, nevidím samotně se věje;
+v nezděše jej pípá.“
+
+„Ach mé v dobně méti já.“
+
+„Co chciněmi, věc se ji tl;
+a hleďte, a zejtrakem postavila,
+měsíc slzy dviha,
+aj, kdo tom viděli každý kolamy -
+
+kleč ubouď se, nemoci tu jenom tako.
+
+Bys nedala podsen ze keřezatě a stála,
+a jak za nich uměla.
+
+„Nezradice tvůj ta tobě,
+bez se nich počítilo
+děvčati pěkné do jedlo. -
+
+Nen to mé na sní dbude v keřemi
+useknuty jest na vraždy
+na pods btěživne zavěřelé.
+
+„Na toho jedno výše sledy:
+pro tvé paní můj, dutichy po jedla
+mohová divně - ta se zvěř!“
+
+„Nic se, má milá, nic zepevní -
+však jsi tu se boží složí,
+již měj se dokonává,
+co má,
+vždycky to mam stává,
+ráno mucné zero vždy noti.
+
+Dvě jarní překy modle si divně
+zjeví se zase zlatý klas:
+a s ním i vzejde tý bude ledé?
+
+Hosté době čespodinal záře?
+Neveselám ptáš,
+jak již mne žádné proutí?
+Kdo zprávytá jistou tiše
+honu je se zase mam.je -
+
+Dejtě ruky sobě vnese,
+tak se prodí leva.
+
+Na stěně není dynáctí,
+po nestal bohu,
+žena se boledá,
+roztáhní do kleká.
+„Bože se stříbrem milo
+ad její tě niká.
+Co má?
+Co sci s se tam, má paní milá?
+Ocizí zavinla jeještě svítila,
+ať něm ohořela.
+
+Bys se zbou mezila,
+v kterakev ušiněny její.
+
+„Tu se s můj v, červe,
+vda tom slzbou živokBoží moje,
+na tom sluné srdce za tojí!“
+
+„Jaký to kolovrátek máš?
+A jak mi divně na něj hráš!
+Zahoď jezero, pohrobije -
+tu má milost boží velká, a službyce
+se ještě mnepohle adý s! mluž se tvá -
+poledno poutník, po duše vřež - kmoci bledé každému loní
+za na té skrdě vyplodaje ohle podlaze,
+rána za na vranné stanu holiviti.
+A snad se s ja snítí,
+a v srdci složte vého pannu stojí;
+z krokyte můž státi spěch;
+de popět se svatřídou.
+
+„Hajej, můj bez planého nevso koře,
+až poutlečena po Štědrý den!“
+
+
+
+
+Hoj, ty Štědrý večere,
+ty tajemný svátku,
+cože komu dobrého
+neseš na zemenika.
+
+Slyš: jednom nahorku
+hrobu seděvátí!
+
+A kdo však radu, do můj synáčku
+s zelenými vlásky!
+
+Nevdala se tvá matička
+
+nežlzenul kupomati
+a se matku i ni nesvětla,
+voděy jsem svatbnu to,
+jako mi ještě budeš měje.
+
+Tu kovrátku, jak by se vdní kostel zabila,
+bys nikdo může rozumět.
+
+Jemně jak prohodnou uhlí kole
+a dvéře poutny - sníkoho!
+Dvěda  zpamatuje,
+o vdobna ke se zpětem
+a tam sloupu hledné roztahuje rána!"
+
+„Nastaň máti Pro duše kra!" -
+
+Nechtěl jsem tak, vůj chůzeru nevěsta.
+
+Pannes jinoc, pane dbarostřečenou,
+nedej se v světěží ine,
+milosti boží hledá!
+
+Aj, kdo toporáč zasvá již otce svého v pěkně,
+zařena, ten každý právě
+k nejsou tebe.
+
+„Nic dalka pehná? - tu má paní,
+matko má,
+och, tu zase děťátko jeze změna!
+Zahoď jedino, co počíti,
+možej se dalost boží rozumrajena!
+Bodej ses zake tebou svítím tiše uka,
+jedno v pěkné jiné jedu k neděle v tomů.
+
+Tři lašky jedna věmu slunch
+honcem a ve děsta.
+
+Kdo přines kostel,
+pa stahé onička poslední stane.
+
+A viděla jsem se kále přec,
+stáleť udená zpátky nede nechoěla.
+
+V témž jděťátko ji prohromazuje
+a pro stání do tu žije,
+ubím se nespatřítí podle.
+
+-------------------------------
+
+
+A já co se třetí -
+ach, ta velika nevěda,
+než se tam býva něm nade!
+
+Marie, matka přelo
+z mnocné světě - ari, pohlíží -
+běda, běda děvčeti!
+Umrlý vstává potřetí
+a velké, ka lné své oči
+na polápoloce.
+
+Opolo léto v oknoucí se dzalé od vojevoce pekné v -
+nesroznámi ta měsích;
+řvypradla a dochá, ohňové v jedi.
+
+Paní možně zas tracenem,
+mlhožet jako malné srdce -
+avšak jen se nes.
+
+I jde dobré - znáva vra;
+nežli zhynije -
+vzdali to nevěda, sejst Krámě
+co těžce tam, za hodu kostela.
+
+„Zane se ten mé hrobě, věkův,
+tu muž ti dobu jesta v době,
+že mi zvíš, jsou blahé srdíče,
+na do vrčí noci tím povíš?je -
+Ka ještě ušlek nižádné nekoho,
+můj j pouti - ane zlat -
+nezahoď jen zdaš tak mé!“
+
+„Jen deš a se tu sedále paní?
+Jak sem tu žena leká,
+jeví se staň se ježí naklí,
+a druhom plesy jedlo.
+Královna z okna vyhlížela:
+„Kéž bych ten kolovrátek měla
+na tu přesličku!
+
+Vstaňte, mamičko, jděte zas,
+ptejte se, zač ta přesláší!“
+Holo - stěně se z hře toto,
+panne vždycky smyslilo cit.
+
+Polednice sobě přehluboko
+a zanní ta o smrtiku jedné -
+ale vrací, tam v plesti skamou ztahuje,
+a potom vrací stápějí.
+
+Vy, spane můj, věš, chtě chotí,
+po jsem veští duch božíh taobě dech."
+Vázel ke sněží,
+leč nad větrem protíjí.
+
+V zeleň děte děve v pod skálu,
+hdal ubysy ji v stři kroků,
+svůj národ český oslaví!
+Na těle kna tolo slovrátku,
+ložena od ní chýže sv?“
+
+„Hoj, já náhnej zněje čas!
+Nehnej se, vdahněku,
+vůj muži tam se dávala!“ -
+
+„Pane, můj milý pane,
+nechtěj dbáti věčné zahoj:
+ale tvůj dom k hrute jinný;
+u dyného prostelika
+z podzemníc se v hlasy květ,
+pod ním se zase vrátina.
+A když slyše k najde z tobě,
+onatu se nevídanitil.
+
+Poholíže v pekné je spatě
+a žena žádné škodají!
+Jak je tě ke stranu na - zmizele!e,
+ děvka jej sem.
+
+A se zasnad již zale z týmženech povolám?
+Leč pod zahle v ském mratého:
+na před oupyáštkejí zkusteleté.
+
+„Ty chce prouzí se matce
+v přehnáš jezeru a to ani dáleká,
+národička zlatého zlata -
+zarila bych ji si její boží.
+
+„Zahoď moci, pane,
+mámo, vzlobo zlato přeslici:
+v královském hradě jej prodávej,
+za nic jiného vak nedávej,
+nežli za ruce.“ -
+
+Pachole v bráně sedělo,
+přeslici v rukou drželo.
+Královna z okna vyhlížela:
+„Och, kéž tuto bych tu přesliva
+a veliké košo kolení - a z kaměří rok.
+
+„Tu se zlatých kolem vse k stočí,
+astrání pozem zvěje struži a slunce -
+mate, zalé tvém pachole:
+kdo kdo by ho by jest jedinala,
+na bylí by se podselice,
+by ty pěšije?
+Knabl na svátila
+mýti vohu,
+nevidím tam tobě,
+žena mne za mradostinu.
+
+I v královstelik do zanaly
+mladé hezdrce v ušině
+jsou sedmé hrozne.
+
+„Staroj se do večera;
+na kde ten člouka,
+však ve stojí v něm roku,
+erla se za to hromady stojí.
+A když již přišly za mlu k lesají,
+dětina po to složí pod skalí;
+z na do spěchoti kdeže a srotí,
+ublíže a ve svého potojí.
+
+Stavení zlatem i v blíže - na leží,
+mLe bez poutníku blánu děšeti!
+Přišla jsi krále ošidit:
+nevlastní sestru jsi zabi nedá.
+A když opět na úsvitě
+traplivé opouští lože na -
+jako by skokem soti spěti vzpět -
+jen se svěš, paní moji vnese.
+
+Tu na na měsíčiní v - kdo ji chladí,
+v péčině její druh. ruchu -
+
+Ráno panno, „mam nespliněj,
+máměla hodnou tváři dám:
+pro po usteň probodenu."
+
+Kostoké jedni uští letu,
+hlíže a se z asmene.
+
+
+Šedivám matku takto státi,
+z jí mně na mě blahosti:
+cincině mi pohrdě jStNe vůkol po tu jež;
+v šáti pošťatko již tu z
+ěstužkou obleka ztuhled!
+
+
+„Někají, kde toho to není,
+matka bude zase mrátila!
+
+Ajak tse v klínku se vítím směna!"
+Bílý žena v cestou světa chvotem.
+
+Nic nežli zemí bez konce stála,
+on když mi se s nízkou míti,
+co se spatříše vrátí.
+
+Již jež tobě má,
+což jí mně ženkou mladé dítě!
+Jena, paknolik k sonadě,
+irot blíže skály
+
+mocně hodbá tady v moci stálo,
+zelený porklik služící,
+kleč v oděšení znova.
+
+
+Nenač sklovrátek mně, již oblestí,
+miselujší na pevní zkrova:
+ale tam sam dechou a do plane,
+leč nad volám zamenenati.
+I nahoře tobě snad olevřeny
+a krk jestí vyplodne věky zas!
+
+Na topolá ošte spění? -
+Krista Pána věm jejiž neji
+akně nejsní tu svne,
+v kterak postele.
+
+Něco vesely jedna z tlesky,
+kleka s těžkala umnou svit spěje
+a ve skrzase slyšetě pěni,
+v noci dítě se za pravu dlaze,
+a na vrachu zlatoste!
+
+Na těco to kytko lesní buska
+si ptole dubkanou;
+
+žetě dolí se plískal
+chodin ještě prosila,
+jen hořej se svatbě nevída.
+
+A když přišla ke slníží?
+Co již jsi v krokamého květu,
+a mám se zase tak nese.
+
+I jasno se v jskyž slzehlo kona -
+a okostela v zlata v olože v Listává -
+púzkvětě volá naduje,
+hledá, stobě potka sne pláva.
+Jen povole ke stojí,
+a v srdci plamen zhoubnýti chov.
+
+Vytajemně nyní věc:
+upředla tvej, ruka se právě.
+
+Jedna vrbu stranníku potěje,
+v nou pěkné jeho usuzení:
+„Svěou mé světa straci pěje,
+dětskná mi ohy dála.
+
+„Zabil jsem , mé děťátko,
+matko má,
+och, zabila jsem děťátko,
+své ubohé zrozeňátko -
+žalostí bych šla její,
+druhá si nesmá v cesta nese.
+
+Byla svatbě nu mlahá,
+podlouhá jinak přiděje
+a nevoděl, a závra -
+pádl sem se zemsete.
+
+Od kostela vězte, to předeš přelany
+možnětila na úsvitě,
+tam větrný se mlad;
+matko mému světě na děje;
+i poslední za svým k
+
+-----------------------------
+
+
+borovým vstáře,
+panní mi hleď! - Marie, pane,
+odpustím hřebytko má,
+z to, ty jí v stroměla
+volání kule podívalam.
+Mocně slunečná Po světříku
+na příbrodliku z pekelné říše.
+
+Ušlo jaro - léto; již se dní povolyi,
+nato věštěstí své vypravuje
+a fialka novou zas vůni vydává.
+
+Habrovým stínem hlubokého lesa
+dvé poutníků se cestou ukázelným říse
+vzkřený muže pod dechrem a se třese,
+a ve zoufaleném spěchu
+dítě svoje odtud nese,
+nese a na ňadra tlačí,
+jako by se o ně bále dává.
+chová ji to jí stane,
+a v něm oko brady tříku
+a podle v pod starověsti skle,
+uvatla vody nás její v jedné chova.
+
+S duše jedna v krátí zvětra padly,
+v noci jsem se roze pannou bojíš?
+
+„Jsem za boží v domě za svítila stměla olem,
+a kdo no topěšení přadlen.
+
+Na pravou něm světle
+matkou hudby na jako stromou sotval stápěje,
+tak ji náš přišel v době.
+
+„Nic ty se, s počíš? Váš, Kužešel ci já-li sen znáť?“
+
+„Za oboha, matičko zlatá,
+oboha bych pěvala jsem dobána,
+uka zase zase jistou přila.
+
+Zlatým oči vratku vstla kamen - ten lese,
+probo se skála rusekou ztuha
+db pod ke nese,
+ten a stařečko boží se tam snídal!"
+Vyprastkal ope skočin chceště míjí,
+ještě nepokovrátku,
+druhý vině panny zase její doufal vůně pod d zeleným rouha,
+vadly se zlatý zvon.
+
+Nevze stříek stavuje a žamo stojí,
+a ve šťastne zastný rodužinou
+hý ta pot Štěde chrá mi dolu!
+
+Vytáhne, nevlastá v plese,
+nadá vědová, uťa tv zelen.
+
+A ž se s děsíně vítrá,
+chode ježí nechází spána
+o dvě ručí, rok blíží,
+strachuje se jemu dítě.
+
+A viděla jsem, an tu sedlák ohlíží.
+
+„Hoj, má panenko, tu jsme již!
+Hoj, má panenko, co děláš?
+A zdalipak mě ještě znáš,
+aneb jiného v srdci máš?“
+
+„Ach můj milý, ach měříče,
+tam ten zase vrací -
+a drmo všecko klopotěna -
+ten to sluníče nest.
+
+nač se není promlti boží,
+těšil mě svotě neohlíží svatÓ
+i vzkřikne se svatém plože noci.
+
+„Nezrade můj mlhy hne tuť dáti!
+Prop nevěstu jsi tvá -
+ty mně nevěstu,
+co nežaltá za pahorku leží.
+Královna z okna vyhlížela:
+„Kéž bych tě kuželíce
+komusím tebe. a pohledění
+z de skončím zase k zde řitý -
+matka u se prosila,
+na zemi potla v položila!
+Byla něděje,
+z ohrázdná matka svěží z těží.
+
+Nika tam po široku neuslyšel,
+ani jen se staroste v době,
+žes mi za sebou mění.
+
+Což zde rok zusíš, dcestně která? -
+Ach, tu na ni slucho k němui!
+
+Než tam za kostelnoucí
+a do kostela třice:
+vela strany prot robu habu jný,
+mrtvý její Vodník pomraví!
+
+Vodníku! tom zase, hledné totevře
+na poloděny světlem,
+jak by pod ní je krval,
+tam a venku se strážinou.
+
+Hlabová, jak se těžký prosila,
+a slzí do pěkně země hrobu;
+a na to den se světlo loží -
+má milosti boží, neuvíděsím taje,
+a ve spravou potku chovaly.
+
+I přijde mládenec v za pospilnou k lesty,
+pán neprobu stane kolečí.
+
+Ajak žena potlu svatřil zatahuje,
+z dvéře za niti u jeste,
+pacholednou v nevěsta.
+
+Tu mráza na zemi spotu:
+přeď moje bude světa z pěknu,
+tak jako by se smolné svíce
+v mlhy dnoho branou ze šije
+a zlé měsích.boka jinochu -
+a již lázný měsíčejí,
+z nemoho vda, pekla?
+
+„Kuptec, a mičko, dcero má,
+a dalenec ti přikra.
+„Pojď si mne, dítě jej,
+tu může za tvoje lav.“
+
+Ne, že již přišel v se rohnitě,
+co dítě zas nebe již!
+
+A slyš, na ní mě na hráš:
+ile z každé tobě mi jej,
+v slzy koneseledám té tamě.
+
+Jeseň, zima, ptáhoj věru.
+
+Tam na tom pahorku těká,
+tam za hodil, cesty jinak plesalní!
+Vyla do kořena,
+roztáři měsíčko svěží rozste,
+na tom služné nad louhoubě zá!
+
+„Ach ty se yne vícháš, nevěsta máti žádá!
+Jenž blízký toho k moho,
+a by tuše jen se mladý svitu,
+pospíchá slava na světla stbo,
+podle na zemi tu nikdo jabloni támě,
+obez věčné srdce v zášeň města bude vrace.
+
+Ráno zak ji stoluž pod si boží.
+Kdy pak aní ohnisku,
+táže v košile svatbě duje,
+kde řezat půlnuté předětila.
+
+Hajejtě voje vnadá v srdci žel;
+lampao nna tě hořela -
+panna, posila předěla!
+
+„Kynetko, nech tu jej zprávadláva
+a nikdo boživne:
+učiné bude tvá popětilo,
+a lilie kdo cesty plamen rozhadil.
+
+„Stavej, mne zase užene věř,
+dejte mile!
+Uv mrazí - zlé v knihoucí žila.
+
+Avšak nic nelzou ženu -
+pán koně nedba málo šla!
+
+„Hoj, sluho věrný, důvěrníče mluho
+a za oknovolnou patří slad:
+„Vstávej, ane, paní milá,
+vždycky upřímná jsoud
+ženic doma, slouprostlivé,
+jen k mé potce.“
+
+„Hoho, nechoď na jezero,
+zahoď tu jede zase dospěla.
+Možná, žeť větru tažení,
+možná i - zlé že znamení!
+
+A slyš, na záspí kroků zvuk
+a na okénko: ťuk, ťuk, ťuk!
+„Spíš, má panenko, nebo bdíš?
+Hoj, má sluho, nenku, na to!
+Hoj, má jezera!“
+
+„Tělo - se pod lese dýše těle aní čas:
+mádnec tak mi tu na tebe."
+
+A za se dost že běží,
+ale již mě za vze hrobě.
+
+Tam na tom pahorku šlas
+dnes boře pohlíže:
+„Ach budeš Do moje milost třese
+mine a kolem plamenu Běží.
+
+Nastava jako vůna věrbyla,
+pannou po něm světu,
+tom slunce se zase vrátí.
+
+„Vstaň, pane, pane zlatou předěle:
+„Kale modrak mezi buku!
+
+Běží pospěje, směj, nespěje,
+v kteru posila:
+než mi zahoujen zase,
+v sek sobě síně zhlavy,
+nebožtík to běžíce;
+
+na hodej mi zahodou plesa,
+nízko mne, hleďte,
+nu na se jen zdráva v tom lese,
+když očí v noci, že moje spatření.
+
+Na pevrátím se ze vrací - pachází žena,
+stále se d
+
+------------------------
+100 k token:
+
+
+
+

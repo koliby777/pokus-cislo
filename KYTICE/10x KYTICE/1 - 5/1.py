@@ -4,47 +4,47 @@ import torch.nn as nn
 from torch.nn import functional as F
 
 # hyperparameters
-batch_size = 64 # Velikost dávky určuje, kolik nezávislých sekvencí bude zpracováno paralelně.
-block_size = 256 # Maximální délka kontextu pro predikce.
-max_iters = 5000 # Maximální počet iterací trénování.
-eval_interval = 500 # Interval, po kterém se provede evaluace modelu.
-learning_rate = 3e-4 # Rychlost učení určuje, jak rychle se model učí z dat.
-device = 'cuda' if torch.cuda.is_available() else 'cpu' # Použití GPU pokud je dostupné, jinak CPU.
-eval_iters = 200 # Počet iterací pro evaluaci.
-n_embd = 384 # Velikost vektoru vložení.
-n_head = 6 # Počet hlav v multi-head attention mechanismu.
-n_layer = 6 # Počet vrstev v modelu.
-dropout = 0.2 # Pravděpodobnost vynechání neuronu během trénování.
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 256 # maximální délka kontextu pro predikce
+max_iters = 5000 # maximální počet iterací trénování
+eval_interval = 500 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost učení
+device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
+eval_iters = 200 # počet iterací pro evaluaci
+n_embd = 384 # velikost vektorů vložení
+n_head = 6 # počet hlav v multi-head attention
+n_layer = 6 # počet vrstev transformátoru
+dropout = 0.2 # pravděpodobnost dropoutu
 # ------------
 
-torch.manual_seed(1337) # Nastavení seedu pro reprodukovatelnost výsledků.
+torch.manual_seed(1337) # nastaví náhodný seed pro reprodukovatelnost
 
 # wget https://raw.githubusercontent.com/koliby777/pokus-cislo/master/kytice.txt
 with open('10x kytice.txt', 'r', encoding='utf-8') as f:
-    text = f.read() # Načtení textu z souboru.
+    text = f.read() # načte textový soubor
 
-# here are all the unique characters that occur in this text
-chars = sorted(list(set(text))) # Seznam všech unikátních znaků v textu.
-vocab_size = len(chars) # Velikost slovníku.
-# create a mapping from characters to integers
-stoi = { ch:i for i,ch in enumerate(chars) } # Mapování znaků na celá čísla.
-itos = { i:ch for i,ch in enumerate(chars) } # Mapování celých čísel na znaky.
-encode = lambda s: [stoi[c] for c in s] # Funkce pro kódování řetězce na seznam celých čísel.
-decode = lambda l: ''.join([itos[i] for i in l]) # Funkce pro dekódování seznamu celých čísel na řetězec.
+# zde jsou všechny unikátní znaky, které se v textu vyskytují
+chars = sorted(list(set(text))) # vytvoří seznam unikátních znaků
+vocab_size = len(chars) # počet unikátních znaků
+# vytvoří mapování znaků na celá čísla
+stoi = { ch:i for i,ch in enumerate(chars) } # mapování znak na index
+itos = { i:ch for i,ch in enumerate(chars) } # mapování index na znak
+encode = lambda s: [stoi[c] for c in s] # encoder: převede řetězec na seznam čísel
+decode = lambda l: ''.join([itos[i] for i in l]) # decoder: převede seznam čísel zpět na řetězec
 
-# Train and test splits
-data = torch.tensor(encode(text), dtype=torch.long) # Kódování celého textu na tensor.
-n = int(0.9*len(data)) # Prvních 90% dat pro trénink, zbytek pro validaci.
-train_data = data[:n] # Tréninková data.
-val_data = data[n:] # Validační data.
+# Rozdělení dat na trénovací a validační
+data = torch.tensor(encode(text), dtype=torch.long) # zakóduje celý text do tensoru
+n = int(0.9*len(data)) # prvních 90% dat bude trénovacích, zbytek validačních
+train_data = data[:n] # trénovací data
+val_data = data[n:] # validační data
 
-# data loading
+# načítání dat
 def get_batch(split):
-    # generate a small batch of data of inputs x and targets y
-    data = train_data if split == 'train' else val_data # Rozdělení dat na tréninková a validační.
-    ix = torch.randint(len(data) - block_size, (batch_size,)) # Náhodný výběr začátků sekvencí.
-    x = torch.stack([data[i:i+block_size] for i in ix]) # Vstupní data pro model.
-    y = torch.stack([data[i+1:i+block_size+1] for i in ix]) # Cílová data pro model.
-    x, y = x.to(device), y.to(device) # Přesun dat na zařízení (GPU/CPU).
+    # vygeneruje malý batch dat pro vstupy x a cíle y
+    data = train_data if split == 'train' else val_data
+    ix = torch.randint(len(data) - block_size, (batch_size,)) # náhodně vybere začátky sekvencí
+    x = torch.stack([data[i:i+block_size] for i in ix]) # vytvoří vstupy x
+    y = torch.stack([data[i+1:i+block_size+1] for i in ix]) # vytvoří cíle y (o jednu pozici posunuté)
+    x, y = x.to(device), y.to(device) # přesune data na zvolené zařízení
     return x, y
 ```
