@@ -1,3 +1,5 @@
+# 1 ---------------------------------------------------------------------------------
+
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
@@ -19,7 +21,7 @@ dropout = 0.2
 torch.manual_seed(1337)
 
 # wget https://raw.githubusercontent.com/koliby777/pokus-cislo/master/kytice.txt
-with open('kytice.txt', 'r', encoding='utf-8') as f:
+with open('10x kytice.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 # here are all the unique characters that occur in this text
@@ -46,6 +48,8 @@ def get_batch(split):
     y = torch.stack([data[i+1:i+block_size+1] for i in ix])
     x, y = x.to(device), y.to(device)
     return x, y
+
+# 2 ---------------------------------------------------------------------------------
 
 @torch.no_grad()
 def estimate_loss():
@@ -100,6 +104,8 @@ class MultiHeadAttention(nn.Module):
         out = torch.cat([h(x) for h in self.heads], dim=-1)
         out = self.dropout(self.proj(out))
         return out
+    
+# 3 ---------------------------------------------------------------------------------    
 
 class FeedFoward(nn.Module):
     """ a simple linear layer followed by a non-linearity """
@@ -132,6 +138,8 @@ class Block(nn.Module):
         x = x + self.sa(self.ln1(x))
         x = x + self.ffwd(self.ln2(x))
         return x
+    
+# 4 ---------------------------------------------------------------------------------
 
 # super simple bigram model
 class BigramLanguageModel(nn.Module):
@@ -182,6 +190,8 @@ class BigramLanguageModel(nn.Module):
             # append sampled index to the running sequence
             idx = torch.cat((idx, idx_next), dim=1) # (B, T+1)
         return idx
+
+# 5 ---------------------------------------------------------------------------------
 
 model = BigramLanguageModel()
 m = model.to(device)
