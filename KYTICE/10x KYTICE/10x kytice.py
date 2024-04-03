@@ -217,6 +217,7 @@ for iter in range(max_iters): # hlavní trénovací smyčka
     loss.backward() # provede backpropagation
     optimizer.step() # aktualizuje váhy modelu
 
-# generování z modelu
+
+# generování z modelu !!!!!!!!
 context = torch.zeros((1, 1), dtype=torch.long, device=device) # inicializuje kontext pro generování
 print(decode(m.generate(context, max_new_tokens=5000)[0].tolist())) # dekóduje a vypíše vygenerovaný text
