@@ -1,4 +1,4 @@
-COLAB T4:
+COLAB T4 GPU:
 
 # hyperparameters
 batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
