@@ -14,7 +14,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpo�
 eval_iters = 200 # počet iterací pro evaluaci
 n_embd = 384 # velikost vektorů vložení
 n_head = 6 # počet hlav v multi-head attention
-n_layer = 6 # počet vrstev transformátoru
+n_layer = 6 # počet vrstev transformeru
 dropout = 0.2 # pravděpodobnost dropoutu
 # ------------
 
@@ -123,7 +123,7 @@ class FeedFoward(nn.Module):
         return self.net(x) # projde vstup přes definovanou síť
 
 class Block(nn.Module):
-    """ Blok transformátoru: komunikace následovaná výpočtem """
+    """ Blok transformeru: komunikace následovaná výpočtem """
 
     def __init__(self, n_embd, n_head):
         # n_embd: dimenze vložení, n_head: počet hlav, které chceme
@@ -149,7 +149,7 @@ class BigramLanguageModel(nn.Module):
         # každý token přímo čte logity pro další token z tabulky vyhledávání
         self.token_embedding_table = nn.Embedding(vocab_size, n_embd) # vložení pro tokeny
         self.position_embedding_table = nn.Embedding(block_size, n_embd) # vložení pro pozice
-        self.blocks = nn.Sequential(*[Block(n_embd, n_head=n_head) for _ in range(n_layer)]) # sekvence transformátorových bloků
+        self.blocks = nn.Sequential(*[Block(n_embd, n_head=n_head) for _ in range(n_layer)]) # sekvence transformerových bloků
         self.ln_f = nn.LayerNorm(n_embd) # normalizace poslední vrstvy
         self.lm_head = nn.Linear(n_embd, vocab_size) # lineární vrstva na konec
 
@@ -160,7 +160,7 @@ class BigramLanguageModel(nn.Module):
         tok_emb = self.token_embedding_table(idx) # (B,T,C) vložení tokenů
         pos_emb = self.position_embedding_table(torch.arange(T, device=device)) # (T,C) vložení pozic
         x = tok_emb + pos_emb # (B,T,C) kombinace vložení tokenů a pozic
-        x = self.blocks(x) # (B,T,C) prochází transformátorovými bloky
+        x = self.blocks(x) # (B,T,C) prochází transformerovými bloky
         x = self.ln_f(x) # (B,T,C) normalizace
         logits = self.lm_head(x) # (B,T,vocab_size) vypočítá logity pro každý token
 
