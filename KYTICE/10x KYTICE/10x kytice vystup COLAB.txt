@@ -10,7 +10,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpo�
 eval_iters = 200 # počet iterací pro evaluaci
 n_embd = 384 # velikost vektorů vložení
 n_head = 6 # počet hlav v multi-head attention
-n_layer = 6 # počet vrstev transformátoru
+n_layer = 6 # počet vrstev transformeru
 dropout = 0.2 # pravděpodobnost dropoutu
 
 --2024-04-01 20:50:44--  https://raw.githubusercontent.com/koliby777/pokus-cislo/master/KYTICE/10x%20KYTICE/10x%20kytice.txt

@@ -10,7 +10,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpo�
 eval_iters = 200 # počet iterací pro evaluaci
 n_embd = 384 # velikost vektorů vložení
 n_head = 6 # počet hlav v multi-head attention
-n_layer = 6 # počet vrstev transformátoru
+n_layer = 6 # počet vrstev transformeru
 dropout = 0.2 # pravděpodobnost dropoutu
 
 *** Python 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)] on win32. ***
