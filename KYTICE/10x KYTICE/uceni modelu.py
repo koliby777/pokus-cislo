@@ -1,25 +1,27 @@
+
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+print("CUDA je k dispozici: ", torch.cuda.is_available())
 
 
-batch_size = 16 # how many independent sequences will we process in parallel?
-block_size = 32 # what is the maximum context length for predictions?
-max_iters = 1000
+batch_size = 128 # how many independent sequences will we process in parallel?
+block_size = 256 # what is the maximum context length for predictions?
+max_iters = 5000
 eval_interval = 100
-learning_rate = 1e-3
+learning_rate = 3e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 eval_iters = 200
-n_embd = 64
-n_head = 4
-n_layer = 4
-dropout = 0.0
+n_embd = 384
+n_head = 6
+n_layer = 6
+dropout = 0.2
 # ------------
 
 torch.manual_seed(1337)
 
 # !wget https://raw.githubusercontent.com/koliby777/pokus-cislo/master/KYTICE/10x%20KYTICE/10x%20kytice.txt
-with open('10x kytice.txt', 'r', encoding='utf-8') as f:
+with open('C:/Users/sms88/u3v.2023/2023-10-05.pridej-uber/pridej-uber/KYTICE/10x KYTICE/10x kytice.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 
@@ -216,20 +218,22 @@ print("naučeno !!!!!\n")
 
 # připojení disku Google:
 
-from google.colab import drive
-drive.mount('/content/drive')
+# from google.colab import drive
+# drive.mount('/content/drive')
 
 # takto:   https://monica.im/share/chat?shareId=cEqtKTwcoLlIFfQZ
 
 # uložení parametrů modelu:
-path = '/content/drive/My Drive/MyModels/10x kytice.pth'
+path = 'C:/Users/sms88/u3v.2023/2023-10-05.pridej-uber/pridej-uber/KYTICE/10x KYTICE/10x kytice.pth'
 torch.save(m, path)
 print("\nModel byl uložen\n")
+input("stiskni enter")
 
 # načtení parametrů modelu:
 # path = '/content/drive/My Drive/MyModels/10x kytice.pth'
 # m = torch.load(path)
 
+"""
 # používání modelu:
 print("----------------------------------------------------")
 print('Zadej délku odpovědi modelu:')
@@ -253,5 +257,5 @@ while initial_text != "KONEC":
     print("Odpověď:")
     print(generated_text)
     initial_text = dotaz()
-
+"""
 
