@@ -16,7 +16,7 @@ n_embd = 384 # velikost vektorů vložení
 n_head = 6 # počet hlav v multi-head attention
 n_layer = 6 # počet vrstev transformeru
 dropout = 0.2 # pravděpodobnost dropoutu
-# ------------
+
 
 torch.manual_seed(1337) # nastaví náhodný seed pro reprodukovatelnost
 
