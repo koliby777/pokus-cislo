@@ -1,32 +1,43 @@
 # 1 ---------------------------------------------------------------------------------
-
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+# pip install gtts langdetect
+from gtts import gTTS
+from langdetect import detect
+from IPython.display import Audio, display
+import tempfile
+import textwrap
+print("\nCUDA je k dispozici: ", torch.cuda.is_available())
 
 # hyperparameters
-batch_size = 16 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
-block_size = 32 # maximální délka kontextu pro predikce
-max_iters = 500 # maximální počet iterací trénování
-eval_interval = 100 # interval pro evaluaci modelu
-learning_rate = 3e-3 # rychlost učení
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 128 # maximální délka kontextu pro predikce
+max_iters = 1000 # maximální počet iterací trénování
+eval_interval = 200 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost učení
 device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
 eval_iters = 200 # počet iterací pro evaluaci
 n_embd = 384 # velikost vektorů vložení
 n_head = 6 # počet hlav v multi-head attention
 n_layer = 6 # počet vrstev transformeru
-dropout = 0.0 # pravděpodobnost dropoutu
+dropout = 0.2 # pravděpodobnost dropoutu
 
 
 torch.manual_seed(1337) # nastaví náhodný seed pro reprodukovatelnost
 
 # !wget https://raw.githubusercontent............
-with open('eu.txt', 'r', encoding='utf-8') as f:
+with open('cs-en.txt', 'r', encoding='utf-8') as f:
     text = f.read() # načte textový soubor
 
 # zde jsou všechny unikátní znaky, které se v textu vyskytují
 chars = sorted(list(set(text))) # vytvoří seznam unikátních znaků
 vocab_size = len(chars) # počet unikátních znaků
+print("----------------------------------------------------")
+znaky = ''.join(chars) # spojení všech unikátních znaků do jednoho řetězce bez jakýchkoli oddělovačů
+zalamovany_text = textwrap.fill(znaky, width=50)
+print(f"Model používá těchto {vocab_size} znaků:\n {zalamovany_text}") # tisk seznamu unikátních znaků
+
 # vytvoří mapování znaků na celá čísla
 stoi = { ch:i for i,ch in enumerate(chars) } # mapování znak na index
 itos = { i:ch for i,ch in enumerate(chars) } # mapování index na znak
@@ -218,6 +229,75 @@ for iter in range(max_iters): # hlavní trénovací smyčka
     optimizer.step() # aktualizuje váhy modelu
 
 
+# uložení parametrů modelu
+torch.save(m, 'cs-en.pth')
+
 # generování z modelu !!!!!!!!
 context = torch.zeros((1, 1), dtype=torch.long, device=device) # inicializuje kontext pro generování
 print(decode(m.generate(context, max_new_tokens=5000)[0].tolist())) # dekóduje a vypíše vygenerovaný text
+
+# používání modelu:
+def dotaz():
+    print("----------------------------------------------------")
+    print('Zadej dotaz: (KONEC pro skočení)')
+    text = input()
+    return text
+
+def zadej_cislo():
+  t_f = True
+  chyba = "to není přirozené číslo!"
+  while t_f:
+    try:
+      cislo = int(input())
+      if cislo < 1:
+        print(chyba)
+      else:
+        return cislo
+        t_f = False
+    except ValueError:
+      print(chyba)
+
+# Nastavení šířky zalomení textu
+
+print("----------------------------------------------------")
+print('Zadej délku dílčí dávky odpovědi modelu:')
+partial_batch = zadej_cislo()
+print("----------------------------------------------------")
+print('Zadej max délku iterací odpovědi:')
+max = zadej_cislo()
+
+vstup = ""
+while vstup != "KONEC":
+    vystup = ""
+    initial_text = dotaz()
+    vstup = initial_text
+    if vstup == "KONEC":
+      break
+    ii = 1
+    while ii <= max:
+        initial_tokens = encode(initial_text)
+        context_tensor = torch.tensor([initial_tokens], dtype=torch.long).to(device)  # Přidáváme dimenzi pro dávku
+        generated_tokens = m.generate(context_tensor, max_new_tokens=partial_batch)  # Generuje zadaný počet tokenů
+        generated_text = decode(generated_tokens[0, -partial_batch:].tolist())
+        vystup = vystup + generated_text
+        initial_text = generated_text
+        ii += 1
+
+    print("----------------------------------------------------")
+    # print(f"Výstup: \n {vystup}")
+    # Použití funkce fill() z modulu textwrap pro zalomení textu
+    zalamovany_text = textwrap.fill(vystup, width = 60)
+
+    # Tisk zalomeného textu
+    print(f"Výstup: \n{zalamovany_text}")
+
+
+lang = detect(zalamovany_text)
+tts = gTTS(text=zalamovany_text, lang=lang)
+with tempfile.NamedTemporaryFile(delete=True, suffix='.mp3') as tmpfile:
+        tts.save(tmpfile.name)
+        display(Audio(tmpfile.name, autoplay=True))
+
+
+print("...skončeno")
+
