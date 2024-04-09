@@ -7,7 +7,7 @@ from torch.nn import functional as F
 # hyperparameters
 batch_size = 16 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
 block_size = 32 # maximální délka kontextu pro predikce
-max_iters = 300 # maximální počet iterací trénování
+max_iters = 500 # maximální počet iterací trénování
 eval_interval = 100 # interval pro evaluaci modelu
 learning_rate = 3e-3 # rychlost učení
 device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
@@ -20,7 +20,7 @@ dropout = 0.0 # pravděpodobnost dropoutu
 
 torch.manual_seed(1337) # nastaví náhodný seed pro reprodukovatelnost
 
-# !wget https://raw.githubusercontent.com/koliby777/pokus-cislo/master/KYTICE/10x%20KYTICE/10x%20kytice.txt
+# !wget https://raw.githubusercontent............
 with open('eu.txt', 'r', encoding='utf-8') as f:
     text = f.read() # načte textový soubor
 
