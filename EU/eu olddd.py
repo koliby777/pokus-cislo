@@ -11,16 +11,16 @@ import textwrap
 print("\nCUDA je k dispozici: ", torch.cuda.is_available())
 
 # hyperparameters
-batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+batch_size = 128 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
 block_size = 256 # maximální délka kontextu pro predikce
-max_iters = 10000 # maximální počet iterací trénování
-eval_interval = 500 # interval pro evaluaci modelu
-learning_rate = 3e-4 # rychlost (pomalost !) učení
+max_iters = 5000 # maximální počet iterací trénování
+eval_interval = 200 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost učení
 device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
 eval_iters = 200 # počet iterací pro evaluaci
 n_embd = 384 # velikost vektorů vložení
 n_head = 6 # počet hlav v multi-head attention
-n_layer = 9 # počet vrstev transformeru
+n_layer = 6 # počet vrstev transformeru
 dropout = 0.2 # pravděpodobnost dropoutu
 
 
@@ -211,15 +211,13 @@ print(sum(p.numel() for p in m.parameters())/1e6, 'M parameters') # spočítá a
 
 # vytvoří PyTorch optimalizátor
 optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate) # používá AdamW optimalizátor s definovanou rychlostí učení
-print("optimalizator vytvoren")
 
 for iter in range(max_iters): # hlavní trénovací smyčka
 
     # občas vyhodnotí ztrátu na trénovacích a validačních datech
     if iter % eval_interval == 0 or iter == max_iters - 1:
         losses = estimate_loss() # odhadne ztrátu
-        torch.save(m, 'cs-en.pth')
-        print(f"step {iter}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}, model ulozen") # vypíše ztráty
+        print(f"step {iter}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}") # vypíše ztráty
 
     # vybere dávku dat
     xb, yb = get_batch('train') # získá dávku trénovacích dat
@@ -233,7 +231,7 @@ for iter in range(max_iters): # hlavní trénovací smyčka
 
 # uložení parametrů modelu
 torch.save(m, 'cs-en.pth')
-print("model ulozen FINAL")
+print("model ulozen")
 
 # generování z modelu !!!!!!!!
 context = torch.zeros((1, 1), dtype=torch.long, device=device) # inicializuje kontext pro generování
