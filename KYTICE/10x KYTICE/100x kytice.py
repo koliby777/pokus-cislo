@@ -20,7 +20,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpo�
 eval_iters = 200 # počet iterací pro evaluaci
 n_embd = 384 # velikost vektorů vložení
 n_head = 6 # počet hlav v multi-head attention
-n_layer = 20 # počet vrstev transformeru
+n_layer = 13 # počet vrstev transformeru
 dropout = 0.2 # pravděpodobnost dropoutu
 
 
