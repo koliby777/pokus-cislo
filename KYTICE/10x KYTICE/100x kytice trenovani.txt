@@ -1,0 +1,187 @@
+20:43
+22:24
+
+# hyperparameters
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 256 # maximální délka kontextu pro predikce
+max_iters = 10000 # maximální počet iterací trénování
+eval_interval = 500 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost (pomalost !) učení
+device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
+eval_iters = 200 # počet iterací pro evaluaci
+n_embd = 384 # velikost vektorů vložení
+n_head = 6 # počet hlav v multi-head attention
+n_layer = 11 # počet vrstev transformeru
+dropout = 0.2 # pravděpodobnost dropoutu
+
+
+GPU CUDA je k dispozici:  True
+----------------------------------------------------
+Model používá těchto 76 znaků:
+   !"*,-
+.:;?ABCDEHIJKLMNOPRSTUVZabcdefhijklmnoprstuvyzÓáéí
+óúýČčďěňŘřŠšťůŽž—“„
+19.663948 M parameters
+optimalizator vytvoren
+step 0: train loss 4.5020, val loss 4.5017, model ulozen
+step 500: train loss 2.2412, val loss 2.2388, model ulozen
+step 1000: train loss 1.0565, val loss 1.0582, model ulozen
+step 1500: train loss 0.1365, val loss 0.1360, model ulozen
+step 2000: train loss 0.0778, val loss 0.0777, model ulozen
+step 2500: train loss 0.0652, val loss 0.0652, model ulozen
+step 3000: train loss 0.0591, val loss 0.0591, model ulozen
+step 3500: train loss 0.0548, val loss 0.0548, model ulozen
+step 4000: train loss 0.0526, val loss 0.0523, model ulozen
+step 4500: train loss 0.0501, val loss 0.0502, model ulozen
+step 5000: train loss 0.0487, val loss 0.0488, model ulozen
+step 5500: train loss 0.0473, val loss 0.0474, model ulozen
+step 6000: train loss 0.0460, val loss 0.0460, model ulozen
+step 6500: train loss 0.0453, val loss 0.0453, model ulozen
+step 7000: train loss 0.0447, val loss 0.0448, model ulozen
+step 7500: train loss 0.0441, val loss 0.0441, model ulozen
+step 8000: train loss 0.0429, val loss 0.0429, model ulozen
+step 8500: train loss 0.0422, val loss 0.0424, model ulozen
+step 9000: train loss 0.0420, val loss 0.0420, model ulozen
+step 9500: train loss 0.0419, val loss 0.0420, model ulozen
+step 9999: train loss 0.0410, val loss 0.0411, model ulozen
+model ulozen FINAL
+
+a škoda levice vysvoboď své děti!
+
+Tu na tom pahorku leže na kolenou
+náš mladý poutník v ranním světla kmitu,
+okolo kříže ruku otočenou,
+vroucně objímá děvčití!
+Ach běda, běda! midí, kde jsi,
+drávní moje dcero!
+Já měla zlý té noci sen:
+nechoď, dceruško, k vodě ven.
+
+Perly jsem tobě vybírala,
+bíle jsem tebe oblíkala,
+v sukničku jako z vodních pěn:
+nechoď, dceruško, k vodě ven.
+
+Bílé šatičky smutek tají,
+v perlách se slzy ukrývají,
+a pátek nešťastný je den:
+nechoď, dceruško, k vodě ven.“ —
+
+Nemá dceruška, nemá stání,
+k jezeru vždy ji cos pohání,
+k jezeru vždy ji cos nutí,
+nic doma, nic jí po chuti. —
+
+První šáteček namočila —
+tu se s ní lávka prolomila
+a po mladičké dívčině
+zavířilo se v hlubině.
+
+Vyvalily se vlny zdola,
+roztáhnuly se v šírá kola;
+a na topole podle skal
+zelený mužík zatleskal.
+
+
+Nevesely truchlivy
+jsou ty vodní kraje,
+kde si v trávě pod leknínem
+rybka s rybkou hraje.
+
+Tu slunéčko nezahřívá,
+větřík nezavěje:
+chladno, ticho — jako žel
+v srdci bez naděje.
+
+Nevesely, truchli
+Výstup: 
+ a škoda levice vysvoboď své děti!  Tu na tom pahorku leže
+na kolenou náš mladý poutník v ranním světla kmitu, okolo
+kříže ruku otočenou, vroucně objímá děvčití! Ach běda, běda!
+midí, kde jsi, drávní moje dcero! Já měla zlý té noci sen:
+nechoď, dceruško, k vodě ven.  Perly jsem tobě vybírala,
+bíle jsem tebe oblíkala, v sukničku jako z vodních pěn:
+nechoď, dceruško, k vodě ven.  Bílé šatičky smutek tají, v
+perlách se slzy ukrývají, a pátek nešťastný je den: nechoď,
+dceruško, k vodě ven.“ —  Nemá dceruška, nemá stání, k
+jezeru vždy ji cos pohání, k jezeru vždy ji cos nutí, nic
+doma, nic jí po chuti. —  První šáteček namočila — tu se s
+ní lávka prolomila a po mladičké dívčině zavířilo se v
+hlubině.  Vyvalily se vlny zdola, roztáhnuly se v šírá kola;
+a na topole podle skal zelený mužík zatleskal.   Nevesely
+truchlivy jsou ty vodní kraje, kde si v trávě pod leknínem
+rybka s rybkou hraje.  Tu slunéčko nezahřívá, větřík
+nezavěje: chladno, ticho — jako žel v srdci bez naděje.
+Nevesely, truchli
+----------------------------------------------------
+Zadej délku dílčí dávky odpovědi modelu:
+55
+----------------------------------------------------
+Zadej max délku iterací odpovědi:
+4
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+co to máš za pasem
+----------------------------------------------------
+Výstup: 
+? Kdo to zpíváš? -  Nechám tě toho znovu mášeš, necho má mi
+blízké najdeš obče.  Sestříbohem, stání nové milé - kníže,
+má ušla ještě více: pustá v lese skála rajské nese plody.“
+Ale jak s ochotou po jablku sáhne, tak s u
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+zabila jsem
+----------------------------------------------------
+Výstup: 
+ děťátko, můj buděčný synu! Ty se na mne usmíváš, já žalostí
+hynu.  Ty radostně vypínáš ke mně ručky obě: a já bych se
+radš viděla tam na zemi v hrobě.  Tam na zemi za kostelem u
+černého kříže, aby má matička zlatá měla
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+pustá v lese skála
+----------------------------------------------------
+Výstup: 
+ rajské nese plouti!“  A Záhoř to jako jí, za čto se dílek
+skále. Co to? - Ryzí zlato! To zlato, jež loni byla, aby
+dítě si pohrálo, jemu v klínek položila. Avšak ženu vábí
+málo, co ji tolik hoře stálo! Stáloť ji, ach, s
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+ke mně ručky obě
+----------------------------------------------------
+Výstup: 
+: a já bych se radš viděl kamen uslune, v noci tělo mrtvo
+leží.  Ani ruchu, ani sluchu, ani zdání o tvém duchu.
+Studené jest to tvé tělo, jak by zpráchnivěti chtělo.  Aniž
+to maličké dítě, hořce plačíc, probudí tě. -  P
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+co ji tolik hoře stálo
+----------------------------------------------------
+Výstup: 
+! Stáloť ji, ach, slzí mnoho; leč děkujíc bohu za to, touže
+drahé tiskne děcko. Hořceť zakusila toho: žetě velmi málo
+zlato, avšak dítě nade všecko!    Dávno kostelíček zbořem;
+umlkly již zvonka zvuky; a kde někdy stály
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+ani zdání o tvém duchu
+----------------------------------------------------
+Výstup: 
+.  Studené jest to tvé tělo, jak by zpráchnivěti chtělo.
+Aniž to maličké dítě, hořce plačíc, probudí tě. -  Paní
+moje, paní zlatá, zdali nemocí jsi jata?  Jestli nemoc ta
+závada nech, ať přijde moudrá rada.  V poli mnoh
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+dávno kostelíček zbořen
+----------------------------------------------------
+Výstup: 
+ě; umlkly již zvonka zvuky; a kde něha své rajské na ře-
+jako cvaklamí ota - jí za nich se jí živ-li - však ještě
+nikdo cestou ublížila, přes vody, luka bažinou; a před se
+poutíkej, neště a své povýšila jeho; a proto duš
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+KONEC

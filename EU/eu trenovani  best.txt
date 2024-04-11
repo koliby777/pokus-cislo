@@ -1,0 +1,129 @@
+22:59
+01:26
+
+# hyperparameters
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 256 # maximální délka kontextu pro predikce
+max_iters = 10000 # maximální počet iterací trénování
+eval_interval = 500 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost (pomalost !) učení
+device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
+eval_iters = 200 # počet iterací pro evaluaci
+n_embd = 384 # velikost vektorů vložení
+n_head = 6 # počet hlav v multi-head attention
+n_layer = 13 # počet vrstev transformeru
+dropout = 0.2 # pravděpodobnost dropoutu
+
+
+GPU CUDA je k dispozici:  True
+----------------------------------------------------
+Model používá těchto 282 znaků:
+          !"$%&'()*+,-
+./0123456789:;<=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]_ab
+cdefghijklmnopqrstuvwxyz¡£§°±²³·¸¹º»½ÁÅÇÉÍÐÓÖØÚÜÝß
+àáâãäåæçèéêëìíîïñòóôõöøùúûüýāăąĆćĉČčĎďĐđēėęĚěğĢīıķ
+ĹĺĽľŁłńņňōŐőœŕŘřŚśŞşŠšŢţŤťūůűŵŹźŻżŽžǎǐșʻˇ˚ΑΒΕΙΚΜΝΟ
+ΠΡΤέήίαβγδεζηικλμνξοπρςστυφχόύώАМНОПТавгдежзийклмн
+опрстучшыья​”•€≤
+23.368986 M parameters
+optimalizator vytvoren
+step 0: train loss 5.7593, val loss 5.7387, model ulozen
+step 500: train loss 2.2209, val loss 2.0955, model ulozen
+step 1000: train loss 1.5594, val loss 1.4697, model ulozen
+step 1500: train loss 1.3466, val loss 1.2615, model ulozen
+step 2000: train loss 1.2537, val loss 1.1745, model ulozen
+step 2500: train loss 1.1980, val loss 1.1266, model ulozen
+step 3000: train loss 1.1554, val loss 1.0915, model ulozen
+step 3500: train loss 1.1304, val loss 1.0605, model ulozen
+step 4000: train loss 1.1015, val loss 1.0392, model ulozen
+step 4500: train loss 1.0833, val loss 1.0236, model ulozen
+step 5000: train loss 1.0725, val loss 1.0076, model ulozen
+step 5500: train loss 1.0556, val loss 0.9953, model ulozen
+step 6000: train loss 1.0425, val loss 0.9795, model ulozen
+step 6500: train loss 1.0274, val loss 0.9748, model ulozen
+step 7000: train loss 1.0178, val loss 0.9648, model ulozen
+step 7500: train loss 1.0102, val loss 0.9515, model ulozen
+step 8000: train loss 1.0023, val loss 0.9456, model ulozen
+step 8500: train loss 0.9953, val loss 0.9401, model ulozen
+step 9000: train loss 0.9896, val loss 0.9353, model ulozen
+step 9500: train loss 0.9835, val loss 0.9280, model ulozen
+step 9999: train loss 0.9736, val loss 0.9223, model ulozen
+model ulozen FINAL
+y and foals.
+The agreement on the trafficking of the failure on Africa in at future times retain which the principles ambitions of the advantage is an upholding and provoke of local consultations, re-deformined harmonious environment.
+HUS activities must drop a fact third and the economic of agricultural issue across the Western Europe law.
+Supported protectionism and manification issues hide instruments this force and an actively important world: hear on such a horlihoody to chance, but also identify into the finalisation of work of Leetch has demonstrated to European newspace britro-Sakharov solyer on the basis of the activities are cularly likely intolerable occasion, tolerance peacient microcretialisation and emploosable cross-border socials.
+Pullication in June Barroso ladies and gentlemen its waters aware issues tring your lives in Copen are essential in the death of Latin America (10 members).
+I would like to thank all the Commission's line to emphasised the volittims which Mr T
+Výstup: 
+y and foals. The agreement on the trafficking of the
+failure on Africa in at future times retain which the
+principles ambitions of the advantage is an upholding and
+provoke of local consultations, re-deformined harmonious
+environment. HUS activities must drop a fact third and the
+economic of agricultural issue across the Western Europe
+law. Supported protectionism and manification issues hide
+instruments this force and an actively important world: hear
+on such a horlihoody to chance, but also identify into the
+finalisation of work of Leetch has demonstrated to European
+newspace britro-Sakharov solyer on the basis of the
+activities are cularly likely intolerable occasion,
+tolerance peacient microcretialisation and emploosable
+cross-border socials. Pullication in June Barroso ladies and
+gentlemen its waters aware issues tring your lives in Copen
+are essential in the death of Latin America (10 members). I
+would like to thank all the Commission's line to emphasised
+the volittims which Mr T
+----------------------------------------------------
+Zadej délku dílčí dávky odpovědi modelu:
+10
+----------------------------------------------------
+Zadej max délku iterací odpovědi:
+30
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+european values and
+----------------------------------------------------
+Výstup: 
+ the certification policies across and rough to diverse, Jan
+Henak, Áomenová a Bali A: protože nájednou moci vyvíjet
+naprotekticky, which replies in other words on the same
+complexity and help when has been combining his development.
+(IT) My colleagues, through the Venezuel. For the
+declarations of
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+iniciativa za společnou
+----------------------------------------------------
+Výstup: 
+ úrovou pomoci, článek 142, dubno fondy is on the next
+signaturity theat, including a compromise that the
+Commission in Serita and feed access to asset it with
+Directive and ', German has holden in constitutional
+considerable energies behaviour ruling can be fact in
+Cotovo. As I am, as if so who is
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+závěry zasedání výboru pro
+----------------------------------------------------
+Výstup: 
+ Evropské unie. Předpokládám v nařízení, kdyplyň je potřeba
+řešit nejenom 20 % bylo velmi úkol 20 let let, ale if some
+kills subject and given an agreement, but on 22 July and a
+challen on this institutional seurčité pilíři plužnější
+zprávu v Eurostat. Trhy vás musí naposkytnout definici na
+tom, co
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+tak to je nějaké divné?
+----------------------------------------------------
+Výstup: 
+ Budu si naprosto velice podkla previdence bodů jsou dliší
+nás. (ES) Pane předsedové není těžit příbuzové výzvy.
+Apektovaná nezákeÍ, které by se cítím nadměrnější lákalizace
+všeobecného programu na počátku rěku 1995. Řiber, however,
+but Primerce across the been reserved to clear one of
+important iss
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+KONEC
