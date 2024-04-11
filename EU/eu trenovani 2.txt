@@ -1,0 +1,126 @@
+zacatek 13:48 hod.
+konec 15:19 hod.
+
+# hyperparameters
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 256 # maximální délka kontextu pro predikce
+max_iters = 10000 # maximální počet iterací trénování
+eval_interval = 500 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost (pomalost !) učení
+device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
+eval_iters = 200 # počet iterací pro evaluaci
+n_embd = 384 # velikost vektorů vložení
+n_head = 6 # počet hlav v multi-head attention
+n_layer = 10 # počet vrstev transformeru
+dropout = 0.2 # pravděpodobnost dropoutu
+
+CUDA je k dispozici:  True
+----------------------------------------------------
+Model používá těchto 282 znaků:
+          !"$%&'()*+,-
+./0123456789:;<=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]_ab
+cdefghijklmnopqrstuvwxyz¡£§°±²³·¸¹º»½ÁÅÇÉÍÐÓÖØÚÜÝß
+àáâãäåæçèéêëìíîïñòóôõöøùúûüýāăąĆćĉČčĎďĐđēėęĚěğĢīıķ
+ĹĺĽľŁłńņňōŐőœŕŘřŚśŞşŠšŢţŤťūůűŵŹźŻżŽžǎǐșʻˇ˚ΑΒΕΙΚΜΝΟ
+ΠΡΤέήίαβγδεζηικλμνξοπρςστυφχόύώАМНОПТавгдежзийклмн
+опрстучшыья​”•€≤
+18.04905 M parameters
+optimalizator vytvoren
+step 0: train loss 5.7150, val loss 5.7005, model ulozen
+step 500: train loss 2.2272, val loss 2.1013, model ulozen
+step 1000: train loss 1.6139, val loss 1.5254, model ulozen
+step 1500: train loss 1.3828, val loss 1.2977, model ulozen
+step 2000: train loss 1.2874, val loss 1.2073, model ulozen
+step 2500: train loss 1.2291, val loss 1.1442, model ulozen
+step 3000: train loss 1.1847, val loss 1.1085, model ulozen
+step 3500: train loss 1.1571, val loss 1.0812, model ulozen
+step 4000: train loss 1.1295, val loss 1.0574, model ulozen
+step 4500: train loss 1.1110, val loss 1.0391, model ulozen
+step 5000: train loss 1.0931, val loss 1.0279, model ulozen
+step 5500: train loss 1.0780, val loss 1.0133, model ulozen
+step 6000: train loss 1.0648, val loss 1.0028, model ulozen
+step 6500: train loss 1.0528, val loss 0.9887, model ulozen
+step 7000: train loss 1.0421, val loss 0.9794, model ulozen
+step 7500: train loss 1.0346, val loss 0.9742, model ulozen
+step 8000: train loss 1.0250, val loss 0.9677, model ulozen
+step 8500: train loss 1.0170, val loss 0.9599, model ulozen
+step 9000: train loss 1.0143, val loss 0.9570, model ulozen
+step 9500: train loss 1.0051, val loss 0.9475, model ulozen
+step 9999: train loss 1.0004, val loss 0.9428, model ulozen
+model ulozen FINAL
+umpany on the willingness of unregional patiency and slightly be a good rate of a legislation for economic political and democratically, the first on both the segments of the impact rural dialogues and aid must and strive for the gender transport for the success of the European Union to full all the climate changes market and accept support the vacces to other initiatives.
+The Council regrettable that differing things easily period by 1 on the other Regulation banks, but also take place for the 
+----------------------------------------------------
+Zadej délku dílčí dávky odpovědi modelu:
+44
+----------------------------------------------------
+Zadej max délku iterací odpovědi:
+3
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+evropa a amerika
+----------------------------------------------------
+Výstup: 
+. For it hasy against one wors. It is further 2001-2009 into
+the comercial efforts in an external European eight through
+the princip
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+well well well
+----------------------------------------------------
+Výstup: 
+ us to speak of our global cul-endangement and transport
+sustainable strategic prohage. The report ensures that
+Parliament in Wish t
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+nevím nevím, co 
+----------------------------------------------------
+Výstup: 
+se potřebujete žádný, aby Smlouva nebo Severské hodnoty
+vyedleně nepoložily, které americkou řešení. Stále zastralý
+vízový svět: ome
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+The report ensures that Parliament
+----------------------------------------------------
+Výstup: 
+ will be very successful to paying demand and whut we are
+passed during the exact health in Ital Arability, Alliance
+and Lute Airs L
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+evropské hodnoty
+----------------------------------------------------
+Výstup: 
+ zásoby mohou evropské některé životy v rámci založené se
+všech občanů navázaly Soutlas Lulling Bankan isoland:
+rodinný východ a reg
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+Zavazujeme se, že
+----------------------------------------------------
+Výstup: 
+ se budeme vyvyjádřeni, její zohlednění taková krize
+nízkouhlíkového tadeilu, která je skutečně vyhorší
+dodržování pravidel nad prod
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+our commitments are
+----------------------------------------------------
+Výstup: 
+ fairly from the shapeery types have been referring this
+measure. It is all where the Spanish Presidency's crisis
+that we have to pu
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+good enough
+----------------------------------------------------
+Výstup: 
+ to rapporteur. The crisis of an opinion in the European
+countries are in citizens and high countries. Investment in
+ver Minutes can
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+KONEC
+

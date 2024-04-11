@@ -1,0 +1,114 @@
+17:10
+18:51
+
+# hyperparameters
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 256 # maximální délka kontextu pro predikce
+max_iters = 10000 # maximální počet iterací trénování
+eval_interval = 500 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost (pomalost !) učení
+device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
+eval_iters = 200 # počet iterací pro evaluaci
+n_embd = 384 # velikost vektorů vložení
+n_head = 6 # počet hlav v multi-head attention
+n_layer = 11 # počet vrstev transformeru
+dropout = 0.2 # pravděpodobnost dropoutu
+
+GPU CUDA je k dispozici:  True
+----------------------------------------------------
+Model používá těchto 282 znaků:
+          !"$%&'()*+,-
+./0123456789:;<=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]_ab
+cdefghijklmnopqrstuvwxyz¡£§°±²³·¸¹º»½ÁÅÇÉÍÐÓÖØÚÜÝß
+àáâãäåæçèéêëìíîïñòóôõöøùúûüýāăąĆćĉČčĎďĐđēėęĚěğĢīıķ
+ĹĺĽľŁłńņňōŐőœŕŘřŚśŞşŠšŢţŤťūůűŵŹźŻżŽžǎǐșʻˇ˚ΑΒΕΙΚΜΝΟ
+ΠΡΤέήίαβγδεζηικλμνξοπρςστυφχόύώАМНОПТавгдежзийклмн
+опрстучшыья​”•€≤
+19.822362 M parameters
+optimalizator vytvoren
+step 0: train loss 5.8130, val loss 5.8324, model ulozen
+step 500: train loss 2.2283, val loss 2.1034, model ulozen
+step 1000: train loss 1.5957, val loss 1.5075, model ulozen
+step 1500: train loss 1.3688, val loss 1.2910, model ulozen
+step 2000: train loss 1.2698, val loss 1.1932, model ulozen
+step 2500: train loss 1.2142, val loss 1.1399, model ulozen
+step 3000: train loss 1.1737, val loss 1.0945, model ulozen
+step 3500: train loss 1.1446, val loss 1.0666, model ulozen
+step 4000: train loss 1.1195, val loss 1.0548, model ulozen
+step 4500: train loss 1.0996, val loss 1.0358, model ulozen
+step 5000: train loss 1.0799, val loss 1.0166, model ulozen
+step 5500: train loss 1.0659, val loss 1.0005, model ulozen
+step 6000: train loss 1.0531, val loss 0.9938, model ulozen
+step 6500: train loss 1.0444, val loss 0.9846, model ulozen
+step 7000: train loss 1.0318, val loss 0.9737, model ulozen
+step 7500: train loss 1.0216, val loss 0.9681, model ulozen
+step 8000: train loss 1.0164, val loss 0.9579, model ulozen
+step 8500: train loss 1.0041, val loss 0.9491, model ulozen
+step 9000: train loss 1.0024, val loss 0.9537, model ulozen
+step 9500: train loss 0.9911, val loss 0.9354, model ulozen
+step 9999: train loss 0.9846, val loss 0.9306, model ulozen
+model ulozen FINAL
+o expressons on the climate change that should understand for the similation, there is not easy in Germany.
+every del what we could pravide they all set of our opens.
+First of all, we need we need to say that abuse the EUs, there is no being an outcome after the Anabi Niw.
+This is all assoring that regulations in judges we have constitute the economic and competitiveness, and what he tability made a recovery is area now whether we belonger.
+Cancry means as the funds to perceive changes raverse, but also promote about femalies with global acts on the maritime and restructury.
+Thirdly in the every European citizen loos, however.
+We have to base migrant compessat's must increase economic violation.
+I support that may have been reformed, in easing the case of the European Telana industrial rules.
+In order to dissease with the example of other policies who were used it mean.
+That is why, the ENP we continue young people forward worker the nurse years about the system with the corporates mor
+Výstup: 
+o expressons on the climate change that should understand
+for the similation, there is not easy in Germany. every del
+what we could pravide they all set of our opens. First of
+all, we need we need to say that abuse the EUs, there is no
+being an outcome after the Anabi Niw. This is all assoring
+that regulations in judges we have constitute the economic
+and competitiveness, and what he tability made a recovery is
+area now whether we belonger. Cancry means as the funds to
+perceive changes raverse, but also promote about femalies
+with global acts on the maritime and restructury. Thirdly in
+the every European citizen loos, however. We have to base
+migrant compessat's must increase economic violation. I
+support that may have been reformed, in easing the case of
+the European Telana industrial rules. In order to dissease
+with the example of other policies who were used it mean.
+That is why, the ENP we continue young people forward worker
+the nurse years about the system with the corporates mor
+----------------------------------------------------
+Zadej délku dílčí dávky odpovědi modelu:
+55
+----------------------------------------------------
+Zadej max délku iterací odpovědi:
+4
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+young people
+----------------------------------------------------
+Výstup: 
+. Now I feel talks that it new Member States entitled
+durable the 'Yet, and objective to particular father
+maintaining from July one!', a database for sman five remots
+against fraud. It is hear for move into all citiatio
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+mladí lidé
+----------------------------------------------------
+Výstup: 
+ v Cassiem a sladěli děti. Kyrometr a dlužíme, které bude
+nadále ještě pouhý, očekávám reakci v otázku včetně vlády.
+Musíme se pomatovat, že by měly nejen celosvětové důsledky
+udělat požadavky. Abychom získali bráninu ja
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+Evropská komise přijala
+----------------------------------------------------
+Výstup: 
+, abychom předložili zprávu pana Latinské republické a možná
+provést. To umožňuje hospodářská a finanční stability a
+obchodu ve vědě schůze. Provádí v Bali june mezi šestem
+poslední rok. Ukázaly, že se vyhloubí při půdě
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+KONEC

@@ -1,0 +1,222 @@
+# hyperparameters
+batch_size = 64 # určuje, kolik nezávislých sekvencí bude zpracováváno paralelně
+block_size = 256 # maximální délka kontextu pro predikce
+max_iters = 10000 # maximální počet iterací trénování
+eval_interval = 500 # interval pro evaluaci modelu
+learning_rate = 3e-4 # rychlost (pomalost !) učení
+device = 'cuda' if torch.cuda.is_available() else 'cpu' # zařízení pro výpočty, GPU pokud je dostupné, jinak CPU
+eval_iters = 200 # počet iterací pro evaluaci
+n_embd = 384 # velikost vektorů vložení
+n_head = 6 # počet hlav v multi-head attention
+n_layer = 9 # počet vrstev transformeru
+dropout = 0.2 # pravděpodobnost dropoutu
+
+with open('cs-en.txt', 'r', encoding='utf-8') as f:
+    text = f.read() # načte textový soubor
+
+CUDA je k dispozici:  True
+----------------------------------------------------
+Model používá těchto 282 znaků:
+          !"$%&'()*+,-
+./0123456789:;<=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]_ab
+cdefghijklmnopqrstuvwxyz¡£§°±²³·¸¹º»½ÁÅÇÉÍÐÓÖØÚÜÝß
+àáâãäåæçèéêëìíîïñòóôõöøùúûüýāăąĆćĉČčĎďĐđēėęĚěğĢīıķ
+ĹĺĽľŁłńņňōŐőœŕŘřŚśŞşŠšŢţŤťūůűŵŹźŻżŽžǎǐșʻˇ˚ΑΒΕΙΚΜΝΟ
+ΠΡΤέήίαβγδεζηικλμνξοπρςστυφχόύώАМНОПТавгдежзийклмн
+опрстучшыья​”•€≤
+16.275738 M parameters
+optimalizator vytvoren
+step 0: train loss 5.7372, val loss 5.7191, model ulozen
+step 500: train loss 2.1873, val loss 2.0619, model ulozen
+step 1000: train loss 1.6111, val loss 1.5202, model ulozen
+step 1500: train loss 1.3889, val loss 1.3051, model ulozen
+step 2000: train loss 1.2929, val loss 1.2096, model ulozen
+step 2500: train loss 1.2347, val loss 1.1549, model ulozen
+step 3000: train loss 1.1916, val loss 1.1135, model ulozen
+step 3500: train loss 1.1584, val loss 1.0898, model ulozen
+step 4000: train loss 1.1378, val loss 1.0651, model ulozen
+step 4500: train loss 1.1173, val loss 1.0519, model ulozen
+step 5000: train loss 1.1041, val loss 1.0289, model ulozen
+step 5500: train loss 1.0864, val loss 1.0187, model ulozen
+step 6000: train loss 1.0727, val loss 1.0102, model ulozen
+step 6500: train loss 1.0615, val loss 0.9956, model ulozen
+step 7000: train loss 1.0505, val loss 0.9882, model ulozen
+step 7500: train loss 1.0427, val loss 0.9812, model ulozen
+step 8000: train loss 1.0337, val loss 0.9749, model ulozen
+step 8500: train loss 1.0282, val loss 0.9679, model ulozen
+step 9000: train loss 1.0209, val loss 0.9628, model ulozen
+step 9500: train loss 1.0150, val loss 0.9590, model ulozen
+step 9999: train loss 1.0076, val loss 0.9510, model ulozen
+model ulozen FINAL
+
+cca 1,5 hodiny to trvalo, lokálně
+
+ Výboru zařadně říká "přímo obviňuje jednotami, které mě vyvoláváme, je sdělení a prace do podpoře ruského a krátkého života možnosti.
+Výbory veřejné zdravíte a veřejné vyšší konkurenceschopnosti a života přiměřený růst migrační prostředků a přijmých cíle.
+(PL) Vítám skromě je zemí, co jsou proradit malé podmínky a mezinárodní vydalování, ale nakupováním zpravodajů kapitalisto (a Kultur), kterou zaručuje kvantitní obchodní požadavky Evropské unie k získání vlivních cílů správy.
+Podle zachraňujíc
+----------------------------------------------------
+Zadej délku dílčí dávky odpovědi modelu:
+55
+----------------------------------------------------
+Zadej max délku iterací odpovědi:
+8
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+kvalitní obchodní požadavky
+----------------------------------------------------
+Výstup: 
+. Záležím, samozřejmě zjet o dohody během přípustného vstupu
+děláme velnášku podpořit prohlášení pozici EU a objektivně
+vyprší likviduální data říkající společnosti požadavek, aby
+vítá terapická spolupráci, jejichž není součástí cílů
+veřejných aktivit, jež kapitálu. Je dobře považovat řadu
+budoucích, přírody pro obnovitelné a sociální ochrany za
+časový bnově informací o spotřebitele. Nesmíme pouze
+zpravodaje o naložených státech. Využít
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+european union is very 
+----------------------------------------------------
+Výstup: 
+ery wide role in the Balkans in order to like a clerboned
+hindred of crisis. We changed their reason as one of the
+most desured its forapords and, a total take position of
+today's motto, although rrights, in this took are death.
+Madam President, I voted in favour of action of the contrary
+points. In this regard, we have to do this soes that this
+when the External Acceptuation is so neutralised to
+information that dossiers the textile pa
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+nevíme, co si počít, tak jedem dále
+----------------------------------------------------
+Výstup: 
+ Evropa v souladu s požadavkem 26 leta 2020 až 2 14 hrd neni
+5 %. Poskytne jednoduše mě zaměřených se na uvěřitelstvost
+této činnosti. Rybáře jak chybování, který bude důležitá
+problémy, jež mohou dělat oba boj proti námořní stanu.
+Dokumenta, která vyžaduje evropský automobila všechny formy
+obyvatelů za jednodyslných otázek, které je v tomto případě
+zbývající správně pravdu produktivní přímořstvím potravin a
+členským státům podpořily to
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+we changed their reason
+----------------------------------------------------
+Výstup: 
+s, the most kind about this report such measures the
+scommiss was given only to earth care, for an package
+principle every position of renewiy, but the thing places
+that hild has have been undoubtedly protesttly treated free
+transparency. It was it at least and businessful, cridate of
+beneficiarities, to exploitate the can better could discuss
+in Corbettan Same a European institution on one citizens. We
+cannot easily take the part of th
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+we simply do not know what to do with that
+----------------------------------------------------
+Výstup: 
+ them pubs, which is sefraished which is set by the type of
+international process. If we will rein Disable once again
+through will be a signing it in this Council, and even
+unsadisfactory of the WTO, which does not type for massive,
+sexual hours of mobiliarity. Therefore, I welcome unsurred
+than when solidarity. The Council's intensaction to met
+become held institutions labelling these that creates the
+families of European law, initiati
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+tak to je konec , skončili jsme, jasná zpráva
+----------------------------------------------------
+Výstup: 
+, zvýšena kulturnímu utváření, mnohoho zdraví evropské
+energie a vysoké příjmy bez povedou každého černopou
+křesťaně. V akci včetně podobných vyžadat spotřebitelům a
+podobným pracovníkům, s odpověďme-ředit poslanci, kterou
+vykáže opět Parlamentu a Nizozemsko, ale komisař, jejím
+mimořádnou politiku vyjádřily období výkonných železničních
+cílů. Věrných z členských států v Afghánisti musí být
+pomocněné a orgány, které se vyvíjejí takové vy
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+we are done, clear message
+----------------------------------------------------
+Výstup: 
+ from our risks and musuppetermous results; secondly of
+illegislation. The conclusions of the Union, as for
+investment in European Union will deepen the fourthouse of
+the Member States not onling aopplying the transparency of
+Iran doing strone. Mr President, ladies and gentlemen,
+another hand, so we will take this place to their own
+product the objectives. The sake of a positive job punishing
+the economy, today greening tea of jobj and
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+křesťané
+----------------------------------------------------
+Výstup: 
+ se organizovali hnutím od informací o akceptivním
+souvislosti s týkajícími sekretifikace. Yokolisti jsme se
+obohati postoupenictví velmi vyslovit. Některé členské státy
+Evropské unie již nesmí poskytnout některé z rozvoje
+energie, která si domnívá s používáním posoudit na obrovské
+monitorování. Je to vzájemně připomínají svobodnou
+technickou nástroji podle postupu Společenství a Bahracie
+začlenit oba ponitingu na pohlaví jsem například
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+Christians
+----------------------------------------------------
+Výstup: 
+ in order to help us prowerly the recommendations is
+granted. The Union a dollar on the objectives of the EU both
+the G20 parts we need it bringing. If President later it
+will be planning a blow on 'film' behind mediumply,
+economise, the bring year on the racism of those people, who
+hope today, on 1 Wooth beyond, 'new, Turks; 'As a report to
+this type house. In this colleague Iran question, and those
+or! They reachly possible. The possi
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+zdraví
+----------------------------------------------------
+Výstup: 
+". Je větším regulativním, že mnou otázka silniční shory
+můžeme přijmout iniciativu pro tyto řídicí. Je to významné
+udělat. Jak se jedná od tohoto příležitost podle Radyny.
+Řekl jsem však její věc, k celou příležitosti. Patřím
+ukazujé, že je irský finanční mise EU, naši příležitostní
+pýrobko na schvalování pracovní podporu v oblasti tun,
+kterým zasluhuje zlepšení budoucích kontrol nezamezitěžených
+zejména. Těchto situací Parlament -, kt
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+health
+----------------------------------------------------
+Výstup: 
+ the decline of capital with regard the European Union, so I
+see today's to start inshistory in this, even those who
+háfstern to the Treaty of Line diversification. In Turkey
+point of Parliament, we involved above agree for the
+Commission, a common rate of plant reduction parliamentarian
+ideas only received in a lesson of trading lateraty with
+other standard efforts. The EU pofenders have been
+abolitioned and sectors on the again, they
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+health
+----------------------------------------------------
+Výstup: 
+y inevironment of the European Union. We will therefore
+ensure that clired measures in need to take more serious
+reality and legal questions capable. In order to honor, for
+the until tques reflect the administrative sectors, withdout
+the countries of the EU. An effective social stere of
+greater game, an introduction and contensive loth
+infrastructures 'Turkey and failurist in the international
+organisation of portugard discussion, and w
+----------------------------------------------------
+Zadej dotaz: (KONEC pro skočení)
+KONEC
